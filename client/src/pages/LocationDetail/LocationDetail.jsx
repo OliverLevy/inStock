@@ -1,6 +1,10 @@
 import React from "react";
-import "./InventoryDetail.scss";
+import "./LocationDetail.scss";
 
 export default function LocationDetail() {
-  return <div></div>;
+  return (
+    <div>
+      <h1>this is the location detail</h1>
+    </div>
+  );
 }

@@ -4,9 +4,7 @@ import './InventoryList.scss'
 export default function InventoryList() {
   return (
     <div>
-      <h1>hi</h1>
-      {/* inventory list */}
-      {/* inventory item */}
+      <h1>this is the inventory List</h1>
     </div>
   )
 }
