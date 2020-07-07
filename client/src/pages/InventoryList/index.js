@@ -1,2 +1,2 @@
-import InventoryList from './InventoryList';
+// import InventoryList from './InventoryList';
 export { default } from './InventoryList'

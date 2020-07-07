@@ -1,0 +1,96 @@
+@import "mixins";
+@import "variables";
+
+@font-face {
+  font-family: Avenir;
+  src: url(../assets/fonts/Linotype-AvenirNextLTPro-Bold.otf);
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Avenir;
+  src: url(../assets/fonts/Linotype-AvenirNextLTPro-Demi.otf);
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Avenir;
+  src: url(../assets/fonts/Linotype-AvenirNextLTPro-Regular.otf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  font-family: Avenir;
+  line-height: 1rem;
+  color: $primary;
+}
+
+a {
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 1.625rem;
+  line-height: 2.25rem;
+
+  @include tablet() {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+
+h2 {
+  font-size: 1rem;
+  line-height: 1.375rem;
+
+  @include tablet() {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+h3 {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+
+  @include tablet() {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+h4 {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+
+  @include tablet() {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+h5 {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: $label;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.date {
+  font-weight: 400;
+  color: $label;
+}
+
+p {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+
+  @include tablet {
+    font-size: 1rem;
+    line-height: 1.75rem;
+  }
+}
