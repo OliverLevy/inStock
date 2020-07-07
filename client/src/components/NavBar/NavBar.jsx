@@ -14,6 +14,6 @@ export default function NavBar() {
           <h3 className="nav__link">Locations</h3>
         </div>
       </div>
-    </div>
+    </div> 
   );
 }
