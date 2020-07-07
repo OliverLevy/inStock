@@ -1,0 +1,92 @@
+[
+  {
+    "id": "W0",
+    "name": "Punder Mifflin",
+    "address": {
+      "street": "123 Fake Street W",
+      "location": "Toronto, CAN"
+    },
+    "contact": {
+      "name": "Dimity Durian",
+      "position": "Regional Manager",
+      "phone": "416 679 4324",
+      "email": "DimoDurian@pundermifflin.com"
+    },
+    "inventoryCategories": "Paper, Crafts, Office supplies"
+  },
+  {
+    "id": "W1",
+    "name": "The Place",
+    "address": {
+      "street": "667 Some Street W",
+      "location": "Toronto, CAN"
+    },
+    "contact": {
+      "name": "Danbi Bambi",
+      "position": "Office Manager",
+      "phone": "416 679 4324",
+      "email": "DanbiBambi@theplace.com"
+    },
+    "inventoryCategories": "Automotion, Mechanical, Transportation, Heavy"
+  },
+  {
+    "id": "W2",
+    "name": "Stocker Construction",
+    "address": {
+      "street": "8893 King Street W",
+      "location": "Toronto, CAN"
+    },
+    "contact": {
+      "name": "Franky Zee",
+      "position": "Manager",
+      "phone": "416 434 5545",
+      "email": "ZeeZeeF@stocker.com"
+    },
+    "inventoryCategories": "Footwear, Safety, Construction"
+  },
+  {
+    "id": "W3",
+    "name": "Box Factory",
+    "address": {
+      "street": "898 Dock Street W",
+      "location": "Toronto, CAN"
+    },
+    "contact": {
+      "name": "Paulo Spice",
+      "position": "Seasonal Manager",
+      "phone": "416 989 3674",
+      "email": "SpicyP@boxfactory.com"
+    },
+    "inventoryCategories": "Home, Illumination, Furniture, Sales"
+  },
+  {
+    "id": "W4",
+    "name": "Janet Planet",
+    "address": {
+      "street": "172 Dat Street W",
+      "location": "Toronto, CAN"
+    },
+    "contact": {
+      "name": "Roisin Salt",
+      "position": "The Wise One",
+      "phone": "416 889 4254",
+      "email": "saltyR@janetplanet.com"
+    },
+    "inventoryCategories": "Construction, Home hardware, Reno"
+  },
+  {
+    "id": "W5",
+    "name": "Heather Pens",
+    "address": {
+      "street": "172 Dat Street W",
+      "location": "Toronto, CAN"
+    },
+    "contact": {
+      "name": "Heather Olson",
+      "position": "The Wise One",
+      "phone": "416 889 4254",
+      "email": "Heather@pens.com"
+    },
+    "inventoryCategories": "Stationary"
+  }
+]
