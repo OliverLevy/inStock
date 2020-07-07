@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon-fab-add</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Global-Style-Guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="22.-InStock-Icons" transform="translate(-598.000000, -363.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Button/FAB/Default" transform="translate(571.000000, 336.000000)">
+                <path d="M41,39 L52,39 C52.5522847,39 53,39.4477153 53,40 C53,40.5522847 52.5522847,41 52,41 L41,41 L41,52 C41,52.5522847 40.5522847,53 40,53 C39.4477153,53 39,52.5522847 39,52 L39,41 L28,41 C27.4477153,41 27,40.5522847 27,40 C27,39.4477153 27.4477153,39 28,39 L39,39 L39,28 C39,27.4477153 39.4477153,27 40,27 C40.5522847,27 41,27.4477153 41,28 L41,39 Z" id="Icon-fab-add"></path>
+            </g>
+        </g>
+    </g>
+</svg>
