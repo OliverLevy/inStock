@@ -13,17 +13,19 @@ class App extends React.Component {
   return (
     <div>
       <BrowserRouter>
+      <NavBar />
         <Link to='/warehouses/:id'> --Location Detail-warehouseDetails?-- </Link>
         <Link to='/inventory/:id'> --Inventory Details--  </Link>
-        <Link to='/inventory'> --All Inventory List--  </Link>
-        <Link to='/'> --Location List-warehousesList?-- </Link>
+        {/* <Link to='/inventory'> --All Inventory List--  </Link> */}
+        {/* <Link to='/warehouses'> --All Warehouses List--  </Link> */}
+        {/* <Link to='/'> --Location List-warehousesList?-- </Link> */}
 
         <Switch>
-          <Route path='/inventory'component={InventoryList} />
           <Route path='/warehouses/:id' component={LocationDetail} />
           <Route path='/inventory/:id' component={InventoryDetail}/>
+          <Route path='/inventory'component={InventoryList} />
           <Route path='/warehouses' component={LocationList} />
-          <Route path='/' component={LocationList} />
+          <Route path='/' exact component={LocationList} />
         </Switch>
 
       </BrowserRouter>

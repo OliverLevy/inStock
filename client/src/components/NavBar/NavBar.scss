@@ -50,6 +50,8 @@
   }
 
   &__link--active {
+    color: white;
+    text-decoration: none;
     text-align: center;
     border-bottom: solid white 4px;
     padding: 0 0 1rem;
@@ -62,6 +64,8 @@
   &__link {
     text-align: center;
     padding: 0 0 1rem;
+    color: white;
+    text-decoration: none;
 
     @include tablet {
       padding: 0 0 1.5rem;
