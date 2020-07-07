@@ -4,6 +4,7 @@ import InventoryDetail from './pages/InventoryDetail';
 import LocationList from './pages/LocationList';
 import LocationDetail from './pages/LocationDetail';
 import { BrowserRouter, Route, Switch, Link} from "react-router-dom";
+import NavBar from './components/NavBar/NavBar';
 import './App.scss';
 
 

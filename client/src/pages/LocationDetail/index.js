@@ -1,2 +1,2 @@
-import LocationDetail from './LocationDetail';
+// import LocationDetail from './LocationDetail';
 export { default } from './LocationDetail'
