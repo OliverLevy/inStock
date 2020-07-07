@@ -1,0 +1,122 @@
+[
+  {
+    "id": "JK2020FD7811201",
+    "name": "Scotch Tape",
+    "description": "A clear sticky on one side tape, for all your crafting needs",
+    "quantity": "400",
+    "lastOrdered": "12/01/2018",
+    "city": "Toronto",
+    "country": "Ontario",
+    "isInstock": false,
+    "categories": "Crafts, Office supplies, Paper",
+    "warehouseId": "W0"
+  },
+  {
+    "id": "JK2020FD7811202",
+    "name": "1/4' Wood Screws",
+    "description": "The oh so handy 1/4' screws, all our screws are galvanized.",
+    "quantity": "0",
+    "lastOrdered": "08/30/2019",
+    "city": "Toronto",
+    "country": "Ontario",
+    "isInstock": true,
+    "categories": "Construction, Home hardware, Reno",
+    "warehouseId": "W4"
+  },
+  {
+    "id": "JK2020FD7811203",
+    "name": "Safety Boots",
+    "description": "You can never be overprepared. With our state of the art safety boots you will never lose a toe again",
+    "quantity": "10",
+    "lastOrdered": "05/17/2019",
+    "city": "Toronto",
+    "country": "Ontario",
+    "isInstock": true,
+    "categories": "Footwear, Safety, Construction",
+    "warehouseId": "W4"
+  },
+  {
+    "id": "JK2020FD7811204",
+    "name": "Tire",
+    "description": "Your cars can't go anywhere without them, so probably best you buy these, Nyeah-eh?",
+    "quantity": "350",
+    "lastOrdered": "10/06/2019",
+    "city": "Toronto",
+    "country": "Ontario",
+    "isInstock": true,
+    "categories": "Automotion, Mechnical, Transportation, Heavy",
+    "warehouseId": "W1"
+  },
+  {
+    "id": "JK2020FD7811205",
+    "name": "Lightbulbs",
+    "description": "They lighty lighty",
+    "quantity": "350",
+    "lastOrdered": "10/06/2019",
+    "city": "Toronto",
+    "country": "Ontario",
+    "isInstock": true,
+    "categories": "Home, Illumination, Furniture, Sales",
+    "warehouseId": "W3"
+  },
+  {
+    "id": "JK2020FD7811206",
+    "name": "Skids",
+    "description": "Skirt skirt",
+    "quantity": "350",
+    "lastOrdered": "11/06/2019",
+    "city": "Toronto",
+    "country": "Ontario",
+    "isInstock": true,
+    "categories": "Home, Shipping",
+    "warehouseId": "W1"
+  },
+  {
+    "id": "JK2020FD7811207",
+    "name": "Toilet Paper",
+    "description": "They wipey wipey",
+    "quantity": "4000",
+    "lastOrdered": "5/27/2019",
+    "city": "Toronto",
+    "country": "Ontario",
+    "isInstock": true,
+    "categories": "Home, Supplies",
+    "warehouseId": "W1"
+  },
+  {
+    "id": "JK2020FD7811208",
+    "name": "Durians",
+    "description": "They stinky",
+    "quantity": "350",
+    "lastOrdered": "4/10/2019",
+    "city": "Toronto",
+    "country": "Ontario",
+    "isInstock": true,
+    "categories": "Fruit",
+    "warehouseId": "W1"
+  },
+  {
+    "id": "JK2020FD7811209",
+    "name": "Flash Lights",
+    "description": "Its lit",
+    "quantity": "419",
+    "lastOrdered": "4/21/2019",
+    "city": "Toronto",
+    "country": "Ontario",
+    "isInstock": false,
+    "categories": "Home, Illumination",
+    "warehouseId": "W3"
+  },
+  {
+    "id": "JK2020FD7811301",
+    "name": "Fountain Pens",
+    "description": "Regular pen but more expensive",
+    "quantity": "992",
+    "lastOrdered": "12/12/2019",
+    "city": "Toronto",
+    "country": "Ontario",
+    "isInstock": true,
+    "categories": "Stationary, Pens",
+    "warehouseId": "W5"
+  }
+]
