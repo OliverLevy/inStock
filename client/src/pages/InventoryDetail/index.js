@@ -1,2 +1,2 @@
-import InventoryDetail from './InventoryDetail';
+// import InventoryDetail from './InventoryDetail';
 export { default } from './InventoryDetail'

@@ -1,2 +1,2 @@
-import LocationList from './LocationList';
+// import LocationList from './LocationList';
 export { default } from './LocationList'
