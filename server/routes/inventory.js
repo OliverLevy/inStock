@@ -39,6 +39,7 @@ router.post("/", (req,res)=>{
     isInstock: req.body.isInstock,
     categoies: req.body.categoies,
     warehouseId: req.body.warehouseId,
+    deleted: false
   }
   if(!postItem.name || !postItem.city || !postItem.country){
     return res.status(400).send({msg: "Please check that you have filled in the Item Name, City, and Country fields."})
@@ -52,15 +53,34 @@ router.post("/", (req,res)=>{
 //Delete an item
 router.post("/delete", (req,res)=>{
 
-//array method to select the item by id to be deleted.
+const deleteItem = {
+  id: req.body.id,
+  name: req.body.name,
+  description: req.body.description,
+  quantity: req.body.quantity,
+  lastOrdered: req.body.lastOrdered,
+  city: req.body.city,
+  country: req.body.country,
+  isInstock: req.body.isInstock,
+  categoies: req.body.categoies,
+  warehouseId: req.body.warehouseId,
+  deleted: req.body.deleted
+}
 
-//slice() out everything and leave the one that wants to be deleted, behind.
-//so the user will get a new array and not see the "deleted" item.
-
-//then return the array.
-
-if(req.id === inventory.id){
-  inventory.deleted.true
+if(deleteItem.id === inventory.id){
+  deleteItem = {
+    id: req.body.id,
+    name: req.body.name,
+    description: req.body.description,
+    quantity: req.body.quantity,
+    lastOrdered: req.body.lastOrdered,
+    city: req.body.city,
+    country: req.body.country,
+    isInstock: req.body.isInstock,
+    categoies: req.body.categoies,
+    warehouseId: req.body.warehouseId,
+    deleted: true
+  }
 }else{
   return res.status(400).send({msg: "Please check you have filled in the ID correctly or provided one."})
 }
