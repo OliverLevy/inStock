@@ -1,5 +1,9 @@
 @import "../../../../App.scss";
 
+a{
+  text-decoration: none;
+  color:$primary;
+}
 .inventoryCard {
   z-index:1;
   //   @include mobile-padding;
@@ -19,6 +23,9 @@
     position: absolute;
     right:0;
     top:0;
+    @include tablet{
+      top:10px;
+    }
   }
   &__contain{
     position:relative;
@@ -40,9 +47,10 @@
     align-items: baseline;
   }
   &__group {
-    margin: 1rem 0;
+    margin-bottom:0.5rem;
     @include tablet {
-      margin: 0;
+      margin-top:1rem;
+      margin-bottom:1rem;
       width: 25%;
     }
     &-description {
@@ -54,7 +62,7 @@
     }
   }
   @include desktop {
-    height: 5vh;
+    // height: 5vh;
   }
 
   &__txt {

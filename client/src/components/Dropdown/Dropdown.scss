@@ -21,7 +21,7 @@
         border: 1px solid black;
         border-radius:2px;
         border-color: $inputBorder;
-        box-shadow: 0px 40px 50px 10px $inputBorder;
+        box-shadow: 0px 10px 50px 10px $inputBorder;
         background-color:white;
         color:$primary;
         width: 145px;
@@ -29,5 +29,11 @@
         padding:0 55px 0 0;
         position:absolute;
         right:0;
+        @include tablet{
+            height:34px;
+            width: 90px;
+            padding:0 20px 0 0;
+            box-shadow:0px 0px 15px 0px $inputBorder;
+        }
     }
 }
