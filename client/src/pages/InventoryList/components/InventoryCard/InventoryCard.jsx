@@ -1,36 +1,38 @@
 import React from 'react';
-import axios from 'axios';
+import './InventoryCard.scss';
 
-export default function InventoryCard() {
+
+
+export default function InventoryCard(inventory) {
     return (
         <div>
              <section className="inventoryList__card inventoryCard">
           <section className="inventoryCard__group">
             <h5 className='inventoryCard__label-vertical'>ITEM</h5>
             <section className="inventoryCard__product">
-              <h3 className="inventoryCard__product-name">Product Name Here</h3>
-              <p className="inventoryCard__product-description inventoryCard__txt">Here is a brief description of the product in he inventory list</p>
+              <h3 className="inventoryCard__product-name">{inventory.name}</h3>
+              <p className="inventoryCard__product-description inventoryCard__txt"></p>
             </section>
           </section>
 ​
           <section className="inventoryCard__group">
           <h5 className='inventoryCard__label-vertical'>LAST ORDERED</h5>
-          <p className="inventoryCard__txt">05/24/2018</p>
+          <p className="inventoryCard__txt">{inventory.lastOrdered}</p>
           </section>
 ​
           <section className="inventoryCard__group">
           <h5 className='inventoryCard__label-vertical'>LOCATION</h5>
-          <p className="inventoryCard__txt">Toronto, CAN</p>
+          <p className="inventoryCard__txt">{inventory.city}</p>
           </section>
 ​
           <section className="inventoryCard__group">
           <h5 className='inventoryCard__label-vertical'>QUANTITY</h5>
-          <p className="inventoryCard__txt">12,000</p>
+          <p className="inventoryCard__txt">{inventory.quantity}</p>
           </section>
 ​
           <section className="inventoryCard__group">
           <h5 className='inventoryCard__label-vertical'>STATUS</h5>
-          <p className="inventoryCard__txt">In Stock</p>
+          {inventory.isInstock ? <p className="inventoryCard__txt" >In Stock</p> : <p className="inventoryCard__txt" >Out of Stock</p>}
           </section>
 ​
           <section className="inventoryCard__removeIcon">
@@ -39,40 +41,6 @@ export default function InventoryCard() {
 ​
         </section>
 ​
-        <section className="inventoryList__card inventoryCard">
-          <section className="inventoryCard__group">
-            <h5 className='inventoryCard__label-vertical'>ITEM</h5>
-            <section className="inventoryCard__product">
-              <h3 className="inventoryCard__product-name">Product Name Here</h3>
-              <p className="inventoryCard__product-description inventoryCard__txt">Here is a brief description of the product in he inventory list</p>
-            </section>
-          </section>
-​
-          <section className="inventoryCard__group">
-          <h5 className='inventoryCard__label-vertical'>LAST ORDERED</h5>
-          <p className="inventoryCard__txt">05/24/2018</p>
-          </section>
-​
-          <section className="inventoryCard__group">
-          <h5 className='inventoryCard__label-vertical'>LOCATION</h5>
-          <p className="inventoryCard__txt">Toronto, CAN</p>
-          </section>
-​
-          <section className="inventoryCard__group">
-          <h5 className='inventoryCard__label-vertical'>QUANTITY</h5>
-          <p className="inventoryCard__txt">12,000</p>
-          </section>
-​
-          <section className="inventoryCard__group">
-          <h5 className='inventoryCard__label-vertical'>STATUS</h5>
-          <p className="inventoryCard__txt">In Stock</p>
-          </section>
-​
-          <section className="inventoryCard__removeIcon">
-            <img src="./assets/Icon-kebab-default.svg" alt="remove button"/>
-          </section>
-          
-        </section>
         </div>
     )
 }

@@ -12,38 +12,46 @@ export default class InventoryList extends Component {
     inventory :[]
   }
 
-// abortController = new AbortController()
-
   componentDidMount () {
+   
+  axios.get("http://localhost:8080/inventory" )
 
-// const inventoryUrl = "http://localhost:8080/inventory";
-     
-    axios.get("http://localhost:8080/inventory" )
+        .then(res => {
+          this.setState({inventory: res.data} )
+          console.log(this.state.inventory)
+        })
+        .catch(err => {         
+        })
+}
 
-          .then(res => {
-            this.setState({inventory: res.data} )
-            console.log(this.state.inventory)
-          })
-          .catch(err => {         
-          })
-  }
-  render() {
-    return (
+render() {
 
-      <div>
-      <section className="inventoryList__header">
+  return (
+
+    <div className="inventoryList">
+
+      <section className="inventoryList__header"> 
         <h1>Inventory</h1>
         <input type="text" placeholder='Search' className='inventoryList__searchBar'/>
-        </section>
-  
+      </section>
+
         <section className="inventoryList__horizontal">
-        <h5 className='inventoryCard__label-horizontal'>ITEM</h5>
-        <h5 className='inventoryCard__label-horizontal'>LAST ORDERED</h5>
-        <h5 className='inventoryCard__label-horizontal'>LOCATION</h5>
-        <h5 className='inventoryCard__label-horizontal'>QUANTITY</h5>
-        <h5 className='inventoryCard__label-horizontal'>STATUS</h5>
+
+          <h5 className='inventoryCard__label-horizontal'>ITEM</h5>
+          <h5 className='inventoryCard__label-horizontal'>LAST ORDERED</h5>
+          <h5 className='inventoryCard__label-horizontal'>LOCATION</h5>
+          <h5 className='inventoryCard__label-horizontal'>QUANTITY</h5>
+          <h5 className='inventoryCard__label-horizontal'>STATUS</h5>
+
         </section>
-        <InventoryCard/>
-      </div>
-    );
-  }}
+
+        {this.state.inventory.map((item) => 
+
+        <InventoryCard
+          inventory = {this.state.inventory} key = {item.id} name={item.name} description={item.description} 
+          quantity={item.quantity} lastOrdered={item.lastOrdered} city={item.city} isInstock={item.isInstock}
+          category={item.category} warehouseId={item.warehouseId}/>
+        )}    
+    </div>
+  );
+}}
