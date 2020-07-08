@@ -9,7 +9,8 @@
     "country": "Ontario",
     "isInstock": false,
     "categories": "Crafts, Office supplies, Paper",
-    "warehouseId": "W0"
+    "warehouseId": "W0",
+    "deleted": false
   },
   {
     "id": "JK2020FD7811202",
@@ -21,7 +22,8 @@
     "country": "Ontario",
     "isInstock": true,
     "categories": "Construction, Home hardware, Reno",
-    "warehouseId": "W4"
+    "warehouseId": "W4",
+    "deleted": false
   },
   {
     "id": "JK2020FD7811203",
@@ -33,7 +35,8 @@
     "country": "Ontario",
     "isInstock": true,
     "categories": "Footwear, Safety, Construction",
-    "warehouseId": "W4"
+    "warehouseId": "W4",
+    "deleted": false
   },
   {
     "id": "JK2020FD7811204",
@@ -45,7 +48,8 @@
     "country": "Ontario",
     "isInstock": true,
     "categories": "Automotion, Mechnical, Transportation, Heavy",
-    "warehouseId": "W1"
+    "warehouseId": "W1",
+    "deleted": false
   },
   {
     "id": "JK2020FD7811205",
@@ -57,7 +61,8 @@
     "country": "Ontario",
     "isInstock": true,
     "categories": "Home, Illumination, Furniture, Sales",
-    "warehouseId": "W3"
+    "warehouseId": "W3",
+    "deleted": false
   },
   {
     "id": "JK2020FD7811206",
@@ -69,7 +74,8 @@
     "country": "Ontario",
     "isInstock": true,
     "categories": "Home, Shipping",
-    "warehouseId": "W1"
+    "warehouseId": "W1",
+    "deleted": false
   },
   {
     "id": "JK2020FD7811207",
@@ -81,7 +87,8 @@
     "country": "Ontario",
     "isInstock": true,
     "categories": "Home, Supplies",
-    "warehouseId": "W1"
+    "warehouseId": "W1",
+    "deleted": false
   },
   {
     "id": "JK2020FD7811208",
@@ -93,7 +100,8 @@
     "country": "Ontario",
     "isInstock": true,
     "categories": "Fruit",
-    "warehouseId": "W1"
+    "warehouseId": "W1",
+    "deleted": false
   },
   {
     "id": "JK2020FD7811209",
@@ -105,7 +113,8 @@
     "country": "Ontario",
     "isInstock": false,
     "categories": "Home, Illumination",
-    "warehouseId": "W3"
+    "warehouseId": "W3",
+    "deleted": false
   },
   {
     "id": "JK2020FD7811301",
@@ -118,5 +127,6 @@
     "isInstock": true,
     "categories": "Stationary, Pens",
     "warehouseId": "W5"
+    ,"deleted": false
   }
 ]

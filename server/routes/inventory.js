@@ -5,6 +5,7 @@ const uuid = require("uuid");
 // router.use(express.json());
 router.use(cors());
 const inventory = require("../instock-data/inventory.json");
+const { SSL_OP_CIPHER_SERVER_PREFERENCE } = require("constants");
 
 
 
@@ -48,5 +49,28 @@ router.post("/", (req,res)=>{
 }
 )
 
+//Delete an item
+router.post("/delete", (req,res)=>{
+
+//array method to select the item by id to be deleted.
+
+//slice() out everything and leave the one that wants to be deleted, behind.
+//so the user will get a new array and not see the "deleted" item.
+
+//then return the array.
+
+if(req.body.id === inventory.id){
+  inventory.deleted.true
+}else{
+  return res.status(400).send({msg: "Please check you have filled in the ID correctly or provided one."})
+}
+inventoryNotDeleted=inventory.map()
+res.json(inventoryNotDeleted)
+}
+//deleted true or false?
+//return everything that is false.
+
+
+)
 
 module.exports = router;
