@@ -49,17 +49,6 @@
     }
   }
 
-  &__link--active {
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    border-bottom: solid white 4px;
-    padding: 0 0 1rem;
-
-    @include tablet {
-      padding: 0 0 1.5rem;
-    }
-  }
 
   &__link {
     text-align: center;
@@ -68,8 +57,20 @@
     text-decoration: none;
 
     @include tablet {
-      padding: 0 0 1.5rem;
-      transform: translateY(-4px);
+      padding: 0 0 24px;
+      // transform: translateY(-4px);
+    }
+
+    &--active {
+      // color: white;
+      // text-decoration: none;
+      // text-align: center;
+      border-bottom: solid white 4px;
+      padding: 0 0 20px;
+  
+      @include tablet {
+        // transform: translateY(4px)
+      }
     }
   }
 }

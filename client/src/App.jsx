@@ -3,16 +3,19 @@ import InventoryList from "./pages/InventoryList";
 import InventoryDetail from "./pages/InventoryDetail";
 import LocationList from "./pages/LocationList";
 import LocationDetail from "./pages/LocationDetail";
-import { BrowserRouter, Route, Switch} from "react-router-dom";
+import { BrowserRouter, Route, Switch, useParams} from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import "./App.scss";
 
 class App extends React.Component {
+
   render() {
+    // let x = useParams()
     return (
+      
       <div>
         <BrowserRouter>
-          <NavBar />
+          <NavBar test={useParams}/>
 
           <Switch>
             <Route path="/warehouses/:id" component={LocationDetail} />
