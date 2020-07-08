@@ -13,10 +13,8 @@ class App extends React.Component {
   return (
     <div>
       <BrowserRouter>
-        <Link to='/warehouses/:id'> --Location Detail-warehouseDetails?-- </Link>
-        <Link to='/inventory/:id'> --Inventory Details--  </Link>
-        <Link to='/inventory'> --All Inventory List--  </Link>
-        <Link to='/'> --Location List-warehousesList?-- </Link>
+
+        <NavBar />
 
         <Switch>
           <Route path='/inventory'component={InventoryList} />

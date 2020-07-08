@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './InventoryList.scss'
 
-export default function InventoryList() {
-  return (
-    <div>
-      <h1>this is the inventory List</h1>
-    </div>
-  )
+export default class InventoryList extends Component {
+  render() {
+    return (
+      <div>
+       <h1>this is inventory page</h1>
+      </div>
+    )
+  }
 }
+
