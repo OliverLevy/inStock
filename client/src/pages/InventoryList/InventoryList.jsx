@@ -48,15 +48,18 @@ render() {
 
         </section>
         
-        <Dropdown />
 
         {this.state.inventory.map((item) => 
+        <div className="inventoryCard__contain">
+        <Dropdown />
+
         <Link key={item.id} to={`/inventory/${item.id}`}>
         <InventoryCard
           inventory = {this.state.inventory} key = {item.id} name={item.name} description={item.description} 
           quantity={item.quantity} lastOrdered={item.lastOrdered} city={item.city} isInstock={item.isInstock}
           category={item.category} warehouseId={item.warehouseId}/>
         </Link>
+        </div>
         )}
           
     </div>

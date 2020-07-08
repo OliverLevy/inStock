@@ -25,17 +25,22 @@ export default class Dropdown extends Component {
       }
   };
 
+//   this will prevent the page leading to inventory/id
+  refreshPage = ()=>{
+      window.location.reload(false)
+  }
+
   render() {
     return (
-      <div className="dropdownMenu">
+      <div className="dropdownMenu inventoryCard__removeIcon">
         <button className="dropdownMenu__button" onClick={this.handleClick}>
-            
+
         </button>
         {this.state.showMenu ? (
           <section className="dropdownMenu__container" ref={(element)=>{
               this.dropdownMenu=element
           }}>
-            <button className="dropdownMenu__remove-button">Remove</button>
+            <button className="dropdownMenu__remove-button" >Remove</button>
           </section>
         ) : null}
       </div>
