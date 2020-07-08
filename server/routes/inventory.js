@@ -59,13 +59,14 @@ router.post("/delete", (req,res)=>{
 
 //then return the array.
 
-if(req.body.id === inventory.id){
+if(req.id === inventory.id){
   inventory.deleted.true
 }else{
   return res.status(400).send({msg: "Please check you have filled in the ID correctly or provided one."})
 }
-inventoryNotDeleted=inventory.map()
-res.json(inventoryNotDeleted)
+//inventoryNotDeleted=inventory.map()
+//res.json(inventoryNotDeleted)
+res.json(inventory)
 }
 //deleted true or false?
 //return everything that is false.
