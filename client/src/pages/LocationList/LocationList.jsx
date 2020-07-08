@@ -12,7 +12,6 @@ export default class LocationList extends Component {
   }
 
   componentDidMount() {
-    console.log("this is did mount");
     axios
       .get(`http://localhost:8080/warehouses`)
       .then((res) => {
