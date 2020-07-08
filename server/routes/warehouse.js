@@ -2,8 +2,10 @@ const express = require("express");
 const router = express.Router();
 const cors = require("cors");
 const uuid = require("uuid");
+const fs = require('fs')
 router.use(cors());
 const locations = require("../instock-data/locations.json");
+const { json } = require("express");
 
 // get ALL locations
 router.get("/", (req, res) => {
@@ -62,6 +64,13 @@ router.post("/", (req, res) => {
     locations.push(output);
   }
   res.send(locations);
+
+  const updatedFile = locations
+  const jsonString = JSON.stringify(updatedFile, null, 2)
+  fs.writeFile('./instock-data/locations.json', jsonString, (err) => {
+    if (err) return console.error('Error writing file', err)
+    else console.log('file written successfully')
+  })
 });
 
 module.exports = router;
