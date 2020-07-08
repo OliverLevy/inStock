@@ -13,7 +13,9 @@ class App extends React.Component {
   return (
     <div>
       <BrowserRouter>
+
         <NavBar />
+
         <Switch>
           <Route path='/inventory'component={InventoryList} />
           <Route path='/warehouses/:id' component={LocationDetail} />
