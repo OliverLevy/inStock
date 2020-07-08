@@ -9,12 +9,13 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  //filter through the inventory and return items that match the warehouse id
-  console.info(req.params)
+  let currentWarehouseId = req.params.id
+  let currentWarehouse = locations.filter(item => item.id === currentWarehouseId)
+  let currentWarehouseInventory = inventory.filter(item => item.warehouseId === currentWarehouseId)
+  let output = {currentWarehouse, currentWarehouseInventory}
 
-  let test = inventory[0].warehouseId
-  res.json(inventory);
-  // res.json("hi");
+  if (!currentWarehouse[0]) return res.status(404).json({reply: "Warehouse does not exist"})
+  res.json(output);
 });
 
 module.exports = router;
