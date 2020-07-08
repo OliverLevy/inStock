@@ -18,7 +18,6 @@ export default class InventoryList extends Component {
 
         .then(res => {
           this.setState({inventory: res.data} )
-          console.log(this.state.inventory)
         })
         .catch(err => {         
         })
