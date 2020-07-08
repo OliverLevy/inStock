@@ -10,7 +10,11 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
   //filter through the inventory and return items that match the warehouse id
-  res.json(locations);
+  console.info(req.params)
+
+  let test = inventory[0].warehouseId
+  res.json(inventory);
+  // res.json("hi");
 });
 
 module.exports = router;
