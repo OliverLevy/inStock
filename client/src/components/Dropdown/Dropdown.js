@@ -28,7 +28,9 @@ export default class Dropdown extends Component {
 
 
   render() {
-    
+    // console.log(this.props.inventoryId)
+    // console.log(this.props.handleRemove)
+
     return (
       <div className="dropdownMenu inventoryCard__removeIcon">
         <button className="dropdownMenu__button" onClick={this.handleClick}>
@@ -39,7 +41,9 @@ export default class Dropdown extends Component {
               this.dropdownMenu=element
           }}>
             
-            <button className="dropdownMenu__remove-button" onClick={this.props.handleRemove}>Remove</button>
+            <button className="dropdownMenu__remove-button" onClick={()=>{
+              this.props.handleRemove(this.props.inventoryId)
+            }}>Remove</button>
           </section>
         ) : null}
       </div>

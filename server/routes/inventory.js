@@ -55,11 +55,12 @@ router.post("/", (req,res)=>{
 
 //Delete an item
 router.delete("/:id", (req,res)=>{
-  const itemDeleteId = req.body.id
+
+  const itemDeleteId = req.params.id
   const flagItem = inventory.filter(
     (item) => item.id === itemDeleteId
   )
-  if(!req.body.id || !flagItem[0]){
+  if(!req.params.id || !flagItem[0]){
     return res.status(400).send({Error: "Please check you have filled in the ID correctly or provided one."})
   }else{
     flagItem[0].deleted=true

@@ -23,7 +23,7 @@
     "isInstock": true,
     "categories": "Construction, Home hardware, Reno",
     "warehouseId": "W4",
-    "deleted": false
+    "deleted": true
   },
   {
     "id": "JK2020FD7811203",
@@ -49,7 +49,7 @@
     "isInstock": true,
     "categories": "Automotion, Mechnical, Transportation, Heavy",
     "warehouseId": "W1",
-    "deleted": false
+    "deleted": true
   },
   {
     "id": "JK2020FD7811205",
@@ -62,7 +62,7 @@
     "isInstock": true,
     "categories": "Home, Illumination, Furniture, Sales",
     "warehouseId": "W3",
-    "deleted": false
+    "deleted": true
   },
   {
     "id": "JK2020FD7811206",
@@ -75,7 +75,7 @@
     "isInstock": true,
     "categories": "Home, Shipping",
     "warehouseId": "W1",
-    "deleted": false
+    "deleted": true
   },
   {
     "id": "JK2020FD7811207",
@@ -88,7 +88,7 @@
     "isInstock": true,
     "categories": "Home, Supplies",
     "warehouseId": "W1",
-    "deleted": false
+    "deleted": true
   },
   {
     "id": "JK2020FD7811208",
@@ -101,7 +101,7 @@
     "isInstock": true,
     "categories": "Fruit",
     "warehouseId": "W1",
-    "deleted": false
+    "deleted": true
   },
   {
     "id": "JK2020FD7811209",
