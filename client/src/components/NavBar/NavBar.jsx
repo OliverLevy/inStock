@@ -6,7 +6,7 @@ import "./NavBar.scss";
 export default function NavBar() {
   return (
     <div className="nav">
-      <NavLink to="/">
+      <NavLink to="/" className="nav__logo-link">
         <img className="nav__logo" src={Logo} alt="InStock Logo" />
       </NavLink>
       <div className="nav__item-container">

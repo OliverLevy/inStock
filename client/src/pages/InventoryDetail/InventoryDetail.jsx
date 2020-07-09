@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./InventoryDetail.scss";
 import Axios from "axios";
 import { Link } from "react-router-dom";
-import BackIcon from '../../assets/icons/Icon-back-arrow.svg'
+import BackIcon from "../../assets/icons/Icon-back-arrow.svg";
 
 export default class InventoryDetail extends Component {
   state = {
@@ -25,17 +25,21 @@ export default class InventoryDetail extends Component {
 
     const inStock = () => {
       if (product.isInstock === true) {
-        return <h4>In Stock</h4>;
+        return <h4 className="inventory-detail__in-stock">In Stock</h4>;
       } else {
-        return <h4>Out of Stock</h4>
+        return <h4 className="inventory-detail__out-of-stock">Out of Stock</h4>;
       }
     };
 
     return (
-      <div>
-        <Link to="/inventory">
-          <img src={BackIcon} alt=""/>
-          <h1>{product.name}</h1>
+      <div className="inventory-detail">
+        <Link to="/inventory" className="inventory-detail__link">
+          <img
+            className="inventory-detail__link-icon"
+            src={BackIcon}
+            alt="go back icon"
+          />
+          <h1 className="inventory-detail__link-title">{product.name}</h1>
         </Link>
         {inStock()}
         <h5>item description</h5>
@@ -53,7 +57,9 @@ export default class InventoryDetail extends Component {
         <p>{product.quantity}</p>
         <h5>categories</h5>
         <p>{product.categories}</p>
-        <button><h3>EDIT</h3></button>
+        <button>
+          <h3>EDIT</h3>
+        </button>
       </div>
     );
   }

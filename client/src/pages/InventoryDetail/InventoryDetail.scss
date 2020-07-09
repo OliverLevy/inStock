@@ -1,0 +1,29 @@
+@import "../../partials/mixins";
+@import "../../partials/variables";
+
+.inventory-detail {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link-icon {
+    height: 20px;
+  }
+
+  &__link-title {
+    padding: 0 1rem;
+  }
+
+  &__in-stock {
+    background-color: lightgreen;
+  }
+
+  &__out-of-stock {
+    background-color: $label;
+  }
+}
