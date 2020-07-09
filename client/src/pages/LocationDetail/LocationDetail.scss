@@ -24,7 +24,7 @@
       justify-content: space-between;
     }
     h1 {
-      margin-bottom: 1rem;
+      // margin-bottom: 1rem;
     }
   }
 
@@ -41,17 +41,25 @@
     
         @include tablet{
         display:flex;
-        justify-content: space-between;
-        width: 82%;
-      }}
+        width: 99%;
+      }
+    &>*{
+      width: 20%;
+    }
+    }
 
       &__subHeader {
         @include tablet {
-         align-content: space-evenly;
-         width: 90%;
-         justify-content: space-around;
+          margin-top:0;
+         width: 75%;
+         justify-content: space-between;
          align-items: flex-start;
-        }}
+
+        }
+      @include desktop{
+        width: 70%;
+      }
+      }
    
 
   &__searchBar {
