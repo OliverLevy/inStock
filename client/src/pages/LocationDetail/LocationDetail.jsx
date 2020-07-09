@@ -4,62 +4,60 @@ import LocationDetailCard from "./components/LocationDetailCard/LocationDetailCa
 import "./LocationDetail.scss";
 
 
+
+
 export default class LocationDetail extends Component {
-
-  state = {
-    locationInventory :[],
-    location : []
-  }
-
   
-    componentDidMount () {
+  state = {
+    currentWarehouseInventory :[],
+    currentWarehouse : []
+  }
+  
+  
+  componentDidMount () {
+    
+    const { match: { params } } = this.props;
+    
      
-      axios.get("http://localhost:8080/inventory" )
-    
-            .then(res => {
-              this.setState({locationInventory: res.data} )
-              console.log(this.state.locationInventory)
-              
-            })
-            .catch(err => {         
-            })
-
-            axios.get("http://localhost:8080/warehouses" )
-    
-            .then(res => {
-              this.setState({location: res.data} )
-              console.log(this.state.location)
-            })
-            .catch(err => {         
-            })     
-    }
-    
+            axios.get(`http://localhost:8080/warehouses/${params.id}`)
+                .then((res) => {
+                  
+                 
+                    this.setState({ currentWarehouse: res.data.currentWarehouse[0],
+                                    currentWarehouseInventory: res.data.currentWarehouseInventory[0] });
+                           
+                  })
+                  
+                  .catch((error) => {
+                    console.log(error)
+                  });} 
+                    
+                  
 
   render() {
     
 
+ 
     return (
 
 
-  
       <div className="locationDetail">
   
         <section className="locationDetail__header"> 
-          <h1>Name of Warehouse</h1>
+          <h1>{this.state.currentWarehouse.name}</h1>
         </section>
         <section className="locationDetail__header locationDetail__subHeader">         
             <div className="locationDetail__header locationDetail__address" >
               <h5>ADRESS</h5>
-              <p>123 Fake Street W</p>
-              <p>Toronto, CAN</p>
-              <p>M65GB7 CA</p>
+              <p>street</p>
+              <p>location</p>
             </div>
             <div className="locationDetail__header locationDetail__address" >
               <h5>CONTACT</h5>
-              <p>Mara Weinberg</p>
-              <p>Warehouse Manager</p>
-              <p>+1 416 678 2345</p>
-              <p>weinberg@instock.com</p>
+              <p></p>
+              <p>name</p>
+              <p>phone</p>
+              <p>email</p>
             </div>
             
 
@@ -75,12 +73,9 @@ export default class LocationDetail extends Component {
   
           </section>
       
-          {this.state.locationInventory.map((item) => 
-          <LocationDetailCard
-            locationInventory = {this.state.locationInventory} key = {item.id} name={item.name} description={item.description} 
-            quantity={item.quantity} lastOrdered={item.lastOrdered} city={item.city} isInstock={item.isInstock}
-            category={item.category} warehouseId={item.warehouseId}/>
-          )}    
+           
+          <LocationDetailCard inventory={this.state.currentWarehouseInventory} />
+            
       </div>
     );
   }
