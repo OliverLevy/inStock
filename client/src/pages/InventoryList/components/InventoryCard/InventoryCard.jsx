@@ -1,6 +1,6 @@
 import React from 'react';
 import './InventoryCard.scss';
-
+import Dropdown from '../../../../components/Dropdown/Dropdown'
 
 
 export default function InventoryCard(inventory) {
@@ -35,12 +35,12 @@ export default function InventoryCard(inventory) {
           {inventory.isInstock ? <p className="inventoryCard__txt" >In Stock</p> : <p className="inventoryCard__txt" >Out of Stock</p>}
           </section>
 ​
-          <section className="inventoryCard__removeIcon">
+          {/* <section className="inventoryCard__removeIcon">
             <img src="./assets/Icon-kebab-default.svg" alt="remove button"/>
-          </section>
-​
+          </section> */}
+​         
+        {/* ​<Dropdown /> */}
         </section>
-​
         </div>
     )
 }

@@ -1,8 +1,11 @@
 
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import InventoryCard from './components/InventoryCard';
 import './InventoryList.scss';
+import '../../components/Dropdown/Dropdown';
+import Dropdown from '../../components/Dropdown/Dropdown';
 
 
 
@@ -43,14 +46,21 @@ render() {
           <h5 className='inventoryCard__label-horizontal'>STATUS</h5>
 
         </section>
+        
 
         {this.state.inventory.map((item) => 
+        <div className="inventoryCard__contain" key={item.id}>
+        <Dropdown />
 
+        <Link to={`/inventory/${item.id}`}>
         <InventoryCard
           inventory = {this.state.inventory} key = {item.id} name={item.name} description={item.description} 
           quantity={item.quantity} lastOrdered={item.lastOrdered} city={item.city} isInstock={item.isInstock}
           category={item.category} warehouseId={item.warehouseId}/>
-        )}    
+        </Link>
+        </div>
+        )}
+          
     </div>
   );
 }}
