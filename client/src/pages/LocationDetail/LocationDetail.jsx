@@ -3,6 +3,7 @@ import axios from 'axios';
 import LocationDetailCard from "./components/LocationDetailCard/LocationDetailCard";
 import "./LocationDetail.scss";
 
+
 export default class LocationDetail extends Component {
 
   state = {
@@ -84,3 +85,4 @@ export default class LocationDetail extends Component {
     );
   }
   }
+

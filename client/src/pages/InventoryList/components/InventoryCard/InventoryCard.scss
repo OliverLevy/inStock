@@ -1,12 +1,17 @@
 @import "../../../../App.scss";
 
+a{
+  text-decoration: none;
+  color:$primary;
+}
 .inventoryCard {
+  z-index:1;
   //   @include mobile-padding;
   position: relative;
   border-bottom: 1px solid $inputBorder;
   @include tablet {
     // @include tablet-padding;
-    
+
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
@@ -14,15 +19,26 @@
     padding-bottom: 1rem;
   }
 
+  &__removeIcon {
+    position: absolute;
+    right:0;
+    top:0;
+    @include tablet{
+      top:10px;
+    }
+  }
+  &__contain{
+    position:relative;
+  }
   & h5 {
-      margin-right: -51px;
+    margin-right: -51px;
   }
 
-  &__label-vertical{
+  &__label-vertical {
     @include tablet {
-        display : none;
+      display: none;
     }
-}
+  }
 
   @include desktop {
     //   @include desktop-padding;
@@ -31,24 +47,24 @@
     align-items: baseline;
   }
   &__group {
-    margin: 1rem 0;
+    margin-bottom:0.5rem;
     @include tablet {
-      margin: 0;
+      margin-top:1rem;
+      margin-bottom:1rem;
       width: 25%;
-
-      }
-      &-description {
-        width: 35%;
-        @include desktop {
-          width: 27%;
-          overflow: hidden;
-        }
+    }
+    &-description {
+      width: 35%;
+      @include desktop {
+        width: 27%;
+        overflow: hidden;
       }
     }
-    @include desktop {
-      height: 5vh;
-}
-  
+  }
+  @include desktop {
+    // height: 5vh;
+  }
+
   &__txt {
     margin-bottom: 0.2rem;
     @include tablet {
@@ -63,6 +79,3 @@
     }
   }
 }
-
-
-  
