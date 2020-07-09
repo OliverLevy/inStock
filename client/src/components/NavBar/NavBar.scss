@@ -1,0 +1,76 @@
+@import "../../partials/variables";
+@import "../../partials/mixins";
+
+.nav {
+  background-color: $primary;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include tablet {
+    height: 80px;
+    padding: 0 1.5rem;
+  }
+
+  @include desktop{
+    padding: 0 11.25rem;
+  }
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__logo {
+    margin: 1rem 0;
+
+    @include tablet{
+      margin-right: 28px
+    }
+  }
+
+  &__item-container {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+
+  &__link-container {
+    width: 50%;
+
+    @include tablet {
+      width: 80px;
+      margin: 0 28px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+  }
+
+
+  &__link {
+    text-align: center;
+    padding: 0 0 1rem;
+    color: white;
+    text-decoration: none;
+
+    @include tablet {
+      padding: 0 0 24px;
+      // transform: translateY(-4px);
+    }
+
+    &--active {
+      // color: white;
+      // text-decoration: none;
+      // text-align: center;
+      border-bottom: solid white 4px;
+      padding: 0 0 20px;
+  
+      @include tablet {
+        // transform: translateY(4px)
+      }
+    }
+  }
+}

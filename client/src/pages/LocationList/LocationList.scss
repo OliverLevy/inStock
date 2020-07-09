@@ -1,0 +1,74 @@
+@import "../../App.scss";
+
+@mixin mobile-padding {
+  padding: 0 1rem;
+}
+
+@mixin tablet-padding {
+  padding: 0 2rem;
+}
+
+@mixin desktop-padding {
+  padding: 0 8rem;
+}
+
+.locationList {
+  @include mobile-padding;
+  &__header {
+    margin: 2rem 0;
+    @include tablet{
+      margin:2rem 0 1rem 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    h1 {
+      margin-bottom: 1rem;
+    }
+  }
+
+  @include tablet {
+    @include tablet-padding;
+  }
+
+  @include desktop {
+    @include desktop-padding;
+  }
+
+  &__searchBar {
+    padding: 15px 40px;
+    border-radius: 5px;
+    width: 80%;
+    background-color: $inputBg;
+    background-position: 10px 15px;
+    border: 1px solid $inputBorder;
+    background-image: url(../../assets/icons/Icon-search.svg);
+    background-repeat: no-repeat;
+
+    @include tablet{
+      height:5vh;
+      width: 38%;
+      background-position:15px 17px ;
+    }
+
+    @include desktop{
+      width: 27%;
+      height:6vh;
+    }
+  }
+
+&__labels{
+  display: none;
+  @include desktop{
+    display:flex;
+    // justify-content: space-between;
+    width: 77vw;
+  }
+  & > *{
+    @include desktop{
+      width: 25%;
+    }
+  }
+}
+
+
+}

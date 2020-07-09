@@ -1,0 +1,85 @@
+@import "../../App.scss";
+
+.locationCard {
+  //   @include mobile-padding;
+  position: relative;
+  border-bottom: 1px solid $inputBorder;
+  @include tablet {
+    // @include tablet-padding;
+    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  @include desktop {
+    //   @include desktop-padding;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    align-items: baseline;
+  }
+  &__group {
+    margin: 1rem 0;
+    @include tablet {
+      margin: 0;
+      width: 25%;
+      &-warehouse {
+        width: 100%;
+        margin-bottom: 0.5rem;
+        @include desktop {
+          width: 25%;
+        }
+      }
+      &-description {
+        width: 35%;
+        @include desktop {
+          width: 27%;
+          overflow: hidden;
+        }
+      }
+    }
+    @include desktop {
+      height: 5vh;
+    }
+  }
+  &__txt {
+    margin-bottom: 0.2rem;
+    @include tablet {
+      margin-bottom: 0;
+      font-size: 13px;
+      line-height: 1.5rem;
+      overflow: hidden;
+    }
+
+    @include desktop {
+      font-size: 14px;
+    }
+
+    &-job {
+      font-style: italic;
+    }
+  }
+
+  &__warehouse-name{
+      font-weight: 600;
+      @include desktop{
+          font-size: 16px;
+      }
+  }
+
+  &__arrowIcon {
+    position: absolute;
+    right: 0rem;
+    top: 0;
+    @include tablet {
+      top: 1rem;
+      right: 0rem;
+    }
+
+    @include desktop{
+        right:1rem;
+    }
+  }
+}
