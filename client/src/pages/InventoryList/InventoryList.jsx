@@ -19,13 +19,13 @@ export default class InventoryList extends Component {
    this.getInventory()
 }
 
-handleRemove=(id)=>{
-axios.delete(`http://localhost:8080/inventory/${id}`)
-.then(res=>console.log(res.data))
-.then(this.getInventory())
-.catch(err=>(console.log("handle remove error")))
+// handleRemove=(id)=>{
+// axios.delete(`http://localhost:8080/inventory/${id}`)
+// .then(res=>console.log(res.data))
+// .then(this.getInventory())
+// .catch(err=>(console.log("handle remove error")))
 
-}
+// }
 
 getInventory=()=>{
   
