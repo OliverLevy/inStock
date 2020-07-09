@@ -1,13 +1,5 @@
 import React, { Component } from "react";
 import './Dropdown.scss';
-import axios from "axios";
-import {Link} from "react-router-dom";
-import InventoryCard from "../../pages/InventoryList/components/InventoryCard";
-import InventoryList from "../../pages/InventoryList"
-
-console.log(Link);
-console.log(InventoryList)
-
 
 export default class Dropdown extends Component {
   constructor(props) {
@@ -33,16 +25,7 @@ export default class Dropdown extends Component {
       }
   };
 
-//   this will prevent the page leading to inventory/id
-  refreshPage = ()=>{
-      window.location.reload(false)
-  }
 
-  //function that deletes item by id. change deleted to TRUE
-
-  
-
-  
 
   render() {
     
