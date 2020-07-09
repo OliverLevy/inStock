@@ -4,12 +4,7 @@ import RemoveLogo from "../../../../assets/icons/Icon-kebab-default.svg"
 
 
 
-export default function LocationDetailCard(inventory) {
-  console.log(inventory)
-  if (inventory.length == 0 ){
-
-    return (null)
-  }
+export default function LocationDetailCard( {inventory} ) {
 
     return (
         <div>
@@ -51,3 +46,4 @@ export default function LocationDetailCard(inventory) {
         </div>
     )
 }
+  
