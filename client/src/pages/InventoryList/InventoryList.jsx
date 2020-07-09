@@ -34,6 +34,7 @@ getInventory=()=>{
           this.setState({inventory: res.data} )
         })
         .catch(err => {console.log("get inventory axios error")        
+
         })
 }
 
