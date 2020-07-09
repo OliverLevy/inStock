@@ -11,9 +11,11 @@ const { SSL_OP_CIPHER_SERVER_PREFERENCE } = require("constants");
 
 
 // get ALL inventory
+
 router.get("/", (req, res) => {
-  res.send(inventory);
+  res.send(inventory.filter((item)=>(item.deleted===false)));
 });
+
 // get inventory by id
 router.get("/:id", (req, res) => {
   const found = inventory.some((item) => item.id === req.params.id);
@@ -52,29 +54,51 @@ router.post("/", (req,res)=>{
 )
 
 //Delete an item
+//Delete an item
 router.delete("/:id", (req,res)=>{
+  const itemDeleteId = req.body.id
+  const flagItem = inventory.filter(
+    (item) => item.id === itemDeleteId
+  )
+  if(!req.body.id || !flagItem[0]){
+    return res.status(400).send({Error: "Please check you have filled in the ID correctly or provided one."})
+  }else{
+    flagItem[0].deleted=true
+  }
+  res.json(inventory)
+  const updatedFile = inventory
+  const jsonString = JSON.stringify(updatedFile, null, 2)
+  fs.writeFile("./instock-data/inventory.json", jsonString, (error)=>{
+    if(error) return console.error("Error writing file.", error)
+    else console.log("File written successful.")
+  })
+  }
+  )
+  
 
-const itemDeleteId = req.body.id
-const flagItem = inventory.filter(
-  (item) => item.id === itemDeleteId
-)
+
+// router.delete("/:id", (req,res)=>{
+
+// const itemDeleteId = req.body.id
+// const flagItem = inventory.filter(
+//   (item) => item.id === itemDeleteId
+// )
 
 
-if(!req.body.id || !flagItem[0]){
-  return res.status(400).send({Error: "Please check you have filled in the ID correctly or provided one."})
-}else{
-  flagItem[0].deleted=true
-}
-res.json(inventory)
-const updatedFile = inventory
-const jsonString = JSON.stringify(updatedFile, null, 2)
-fs.writeFile("./instock-data/inventory.json", jsonString, (error)=>{
-  if(error) return console.error("Error writing file.", error)
-  else console.log("File written successful.")
-})
-}
+// if(!req.body.id || !flagItem[0]){
+//   return res.status(400).send({Error: "Please check you have filled in the ID correctly or provided one."})
+// }else{
+//   flagItem[0].deleted=true
+// }
+// //Write new file, changing the Inventory Itdem Deleted status to TRUE.
 
-
-)
+// const updatedFile = inventory
+// const jsonString = JSON.stringify(updatedFile, null, 2)
+// fs.writeFile("./instock-data/inventory.json", jsonString, (error)=>{
+//   if(error) return console.error("Error writing file.", error)
+//   else console.log("File written successful.")
+// })
+// }
+// )
 
 module.exports = router;

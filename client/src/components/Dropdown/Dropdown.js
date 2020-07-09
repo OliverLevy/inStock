@@ -1,5 +1,13 @@
 import React, { Component } from "react";
 import './Dropdown.scss';
+import axios from "axios";
+import {Link} from "react-router-dom";
+import InventoryCard from "../../pages/InventoryList/components/InventoryCard";
+import InventoryList from "../../pages/InventoryList"
+
+console.log(Link);
+console.log(InventoryList)
+
 
 export default class Dropdown extends Component {
   constructor(props) {
@@ -8,7 +16,7 @@ export default class Dropdown extends Component {
       showMenu: false,
     };
   }
-
+  
   handleClick = (event) => {
     event.preventDefault();
     this.setState({ showMenu: true }, () => {
@@ -30,7 +38,14 @@ export default class Dropdown extends Component {
       window.location.reload(false)
   }
 
+  //function that deletes item by id. change deleted to TRUE
+
+  
+
+  
+
   render() {
+    
     return (
       <div className="dropdownMenu inventoryCard__removeIcon">
         <button className="dropdownMenu__button" onClick={this.handleClick}>
@@ -40,7 +55,8 @@ export default class Dropdown extends Component {
           <section className="dropdownMenu__container" ref={(element)=>{
               this.dropdownMenu=element
           }}>
-            <button className="dropdownMenu__remove-button" >Remove</button>
+            
+            <button className="dropdownMenu__remove-button" onClick={this.props.handleRemove}>Remove</button>
           </section>
         ) : null}
       </div>
