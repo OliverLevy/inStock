@@ -36,7 +36,7 @@
     "isInstock": true,
     "categories": "Footwear, Safety, Construction",
     "warehouseId": "W4",
-    "deleted": false
+    "deleted": true
   },
   {
     "id": "JK2020FD7811204",
@@ -126,7 +126,7 @@
     "country": "Ontario",
     "isInstock": true,
     "categories": "Stationary, Pens",
-    "warehouseId": "W5"
-    ,"deleted": false
+    "warehouseId": "W5",
+    "deleted": false
   }
 ]
