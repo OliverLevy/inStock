@@ -16,13 +16,25 @@ export default class InventoryList extends Component {
   }
 
   componentDidMount () {
-   
-  axios.get("http://localhost:8080/inventory" )
+   this.getInventory()
+}
+
+handleRemove=(id)=>{
+  // console.log(id);
+axios.delete(`http://localhost:8080/inventory/${id}`)
+.then(res=>this.setState({inventory:res.data}))
+.catch(err=>(console.log("handle remove error")))
+}
+
+getInventory=()=>{
+  
+  axios.get("http://localhost:8080/inventory")
 
         .then(res => {
           this.setState({inventory: res.data} )
         })
-        .catch(err => {         
+        .catch(err => {console.log("get inventory axios error")        
+
         })
 }
 
@@ -50,7 +62,7 @@ render() {
 
         {this.state.inventory.map((item) => 
         <div className="inventoryCard__contain" key={item.id}>
-        <Dropdown />
+        <Dropdown handleRemove={this.handleRemove} inventoryId={item.id}/>
 
         <Link to={`/inventory/${item.id}`}>
         <InventoryCard

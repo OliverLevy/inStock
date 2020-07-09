@@ -8,7 +8,7 @@ export default class Dropdown extends Component {
       showMenu: false,
     };
   }
-
+  
   handleClick = (event) => {
     event.preventDefault();
     this.setState({ showMenu: true }, () => {
@@ -25,12 +25,12 @@ export default class Dropdown extends Component {
       }
   };
 
-//   this will prevent the page leading to inventory/id
-  refreshPage = ()=>{
-      window.location.reload(false)
-  }
+
 
   render() {
+    // console.log(this.props.inventoryId)
+    // console.log(this.props.handleRemove)
+
     return (
       <div className="dropdownMenu inventoryCard__removeIcon">
         <button className="dropdownMenu__button" onClick={this.handleClick}>
@@ -40,7 +40,10 @@ export default class Dropdown extends Component {
           <section className="dropdownMenu__container" ref={(element)=>{
               this.dropdownMenu=element
           }}>
-            <button className="dropdownMenu__remove-button" >Remove</button>
+            
+            <button className="dropdownMenu__remove-button" onClick={()=>{
+              this.props.handleRemove(this.props.inventoryId)
+            }}>Remove</button>
           </section>
         ) : null}
       </div>
