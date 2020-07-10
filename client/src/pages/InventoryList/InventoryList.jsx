@@ -59,7 +59,7 @@ render() {
 
         </section>
         
-
+{/* inventory card */}
         {this.state.inventory.map((item) => 
         <div className="inventoryCard__contain" key={item.id}>
         <Dropdown handleRemove={this.handleRemove} inventoryId={item.id}/>

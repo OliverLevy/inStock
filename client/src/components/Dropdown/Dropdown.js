@@ -11,18 +11,14 @@ export default class Dropdown extends Component {
   
   handleClick = (event) => {
     event.preventDefault();
-    this.setState({ showMenu: true }, () => {
-      document.addEventListener("click", this.turnOffMenu);
-    });
+    this.setState({ showMenu: true });
   };
 
   turnOffMenu = (event) => {
-      if(!this.dropdownMenu.contains(event.target)){
+      // if(this.dropdownMenu){
 
-          this.setState({ showMenu: false }, () => {
-            document.removeEventListener("click", this.turnOffMenu);
-          });
-      }
+          this.setState({ showMenu: false });
+      // }
   };
 
 
@@ -33,7 +29,7 @@ export default class Dropdown extends Component {
 
     return (
       <div className="dropdownMenu inventoryCard__removeIcon">
-        <button className="dropdownMenu__button" onClick={this.handleClick}>
+        <button className="dropdownMenu__button" onClick={this.handleClick} >
 
         </button>
         {this.state.showMenu ? (
