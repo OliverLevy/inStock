@@ -10,7 +10,7 @@
     "isInstock": false,
     "categories": "Crafts, Office supplies, Paper",
     "warehouseId": "W0",
-    "deleted": true
+    "deleted": false
   },
   {
     "id": "JK2020FD7811202",
@@ -23,7 +23,7 @@
     "isInstock": true,
     "categories": "Construction, Home hardware, Reno",
     "warehouseId": "W4",
-    "deleted": false
+    "deleted": true
   },
   {
     "id": "JK2020FD7811203",
