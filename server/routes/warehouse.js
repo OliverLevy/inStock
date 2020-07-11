@@ -1,12 +1,21 @@
 const express = require("express");
 const router = express.Router();
+const cors = require("cors");
+const uuid = require("uuid");
+const fs = require('fs')
+router.use(cors());
 const locations = require("../instock-data/locations.json");
+
 const inventory = require("../instock-data/inventory.json");
+
+const { json } = require("express");
+
 
 // get ALL locations
 router.get("/", (req, res) => {
   res.json(locations);
 });
+
 
 router.get("/:id", (req, res) => {
   let currentWarehouseId = req.params.id
@@ -16,6 +25,48 @@ router.get("/:id", (req, res) => {
 
   if (!currentWarehouse[0]) return res.status(404).json({reply: "Warehouse does not exist"})
   res.json(output);
+}
+
+router.post("/", (req, res) => {
+  const warehouseToAdd = req.body.newWarehouse;
+  const output = {
+    id: uuid.v4(),
+    name: warehouseToAdd.name,
+    address: {
+      street: warehouseToAdd.address.street,
+      location: warehouseToAdd.address.location,
+    },
+    contact: {
+      name: warehouseToAdd.contact.name,
+      position: warehouseToAdd.contact.position,
+      phone: warehouseToAdd.contact.phone,
+      email: warehouseToAdd.contact.email,
+    },
+    inventoryCategories: warehouseToAdd.inventoryCategories,
+  };
+  if (
+    !output.name ||
+    !output.address.street ||
+    !output.address.location ||
+    !output.contact.name ||
+    !output.contact.position ||
+    !output.contact.phone ||
+    !output.contact.email ||
+    !output.inventoryCategories
+  ) {
+    return res.status(400).json({ error: "Missing information" });
+  } else {
+    locations.push(output);
+  }
+  res.send(locations);
+
+  const updatedFile = locations
+  const jsonString = JSON.stringify(updatedFile, null, 2)
+  fs.writeFile('./instock-data/locations.json', jsonString, (err) => {
+    if (err) return console.error('Error writing file', err)
+    else console.log('file written successfully')
+  })
+
 });
 
 module.exports = router;

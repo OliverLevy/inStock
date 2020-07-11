@@ -15,6 +15,26 @@ export default class InventoryList extends Component {
     inventory :[]
   }
 
+  addInventory = e => {
+    const formData = new formData(e.target);
+    e.preventDefault()
+
+    for (let [key, value] of formData.entries())
+
+    axios.post("http://localhost:8080/inventory", {
+      "id": formData.get("id"),
+      "name": formData.get("name"),
+      "description": formData.get("description"),
+      "quantity": formData.get("quantity"),
+      "lastOrdered": formData.get("lastOrdered"),
+      "city": formData.get("city"),
+      "country": formData.get("country"),
+      "isInstock": formData.get("isInstock"),
+      "categories": formData.get("categories"),
+      "warehouseId": formData.get("warehousId"),
+    })  
+  }
+
   componentDidMount () {
    this.getInventory()
 }
@@ -59,7 +79,7 @@ render() {
 
         </section>
         
-
+{/* inventory card */}
         {this.state.inventory.map((item) => 
         <div className="inventoryCard__contain" key={item.id}>
         <Dropdown handleRemove={this.handleRemove} inventoryId={item.id}/>
