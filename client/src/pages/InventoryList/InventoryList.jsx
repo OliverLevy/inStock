@@ -1,8 +1,11 @@
 
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import InventoryCard from './components/InventoryCard';
 import './InventoryList.scss';
+import '../../components/Dropdown/Dropdown';
+import Dropdown from '../../components/Dropdown/Dropdown';
 
 
 
@@ -33,14 +36,25 @@ export default class InventoryList extends Component {
   }
 
   componentDidMount () {
-   
-  axios.get("http://localhost:8080/inventory" )
+   this.getInventory()
+}
+
+handleRemove=(id)=>{
+  // console.log(id);
+axios.delete(`http://localhost:8080/inventory/${id}`)
+.then(res=>this.setState({inventory:res.data}))
+.catch(err=>(console.log("handle remove error")))
+}
+
+getInventory=()=>{
+  
+  axios.get("http://localhost:8080/inventory")
 
         .then(res => {
           this.setState({inventory: res.data} )
         })
-        .catch(err => {  
-          console.log(err.message);       
+        .catch(err => {console.log("get inventory axios error")        
+
         })
 }
 
@@ -64,14 +78,21 @@ render() {
           <h5 className='inventoryCard__label-horizontal'>STATUS</h5>
 
         </section>
-
+        
+{/* inventory card */}
         {this.state.inventory.map((item) => 
+        <div className="inventoryCard__contain" key={item.id}>
+        <Dropdown handleRemove={this.handleRemove} inventoryId={item.id}/>
 
+        <Link to={`/inventory/${item.id}`}>
         <InventoryCard
           inventory = {this.state.inventory} key = {item.id} name={item.name} description={item.description} 
           quantity={item.quantity} lastOrdered={item.lastOrdered} city={item.city} isInstock={item.isInstock}
           category={item.category} warehouseId={item.warehouseId}/>
-        )}    
+        </Link>
+        </div>
+        )}
+          
     </div>
   );
 }}

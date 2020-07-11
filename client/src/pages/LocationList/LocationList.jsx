@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./LocationList.scss";
 import LocationCard from "../../components/LocationCard/LocationCard";
 import axios from "axios";
@@ -16,6 +17,8 @@ export default class LocationList extends Component {
       .get(`http://localhost:8080/warehouses`)
       .then((res) => {
         this.setState({ warehouse: res.data });
+      console.log(this.state.warehouse[0].address.street)
+
       })
       .catch((error) => {
         console.log("Warehouses Axios error");
@@ -43,7 +46,7 @@ export default class LocationList extends Component {
           <h5 className="locationCard__labels-horizontal">CATEGORIES</h5>
         </section>
         {this.state.warehouse.map((item) => (
-          <LocationCard
+         <Link  to={`warehouses/${item.id}`}><LocationCard
             key={item.id}
             warehouseName={item.name}
             street={item.address.street}
@@ -53,7 +56,7 @@ export default class LocationList extends Component {
             contactEmail={item.contact.email}
             contactPhone={item.contact.phone}
             category={item.inventoryCategories}
-          />
+          /></Link> 
         ))}
       </div>
     );
