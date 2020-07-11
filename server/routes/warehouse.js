@@ -25,7 +25,7 @@ router.get("/:id", (req, res) => {
 
   if (!currentWarehouse[0]) return res.status(404).json({reply: "Warehouse does not exist"})
   res.json(output);
-}
+})
 
 router.post("/", (req, res) => {
   const warehouseToAdd = req.body.newWarehouse;
@@ -67,6 +67,6 @@ router.post("/", (req, res) => {
     else console.log('file written successfully')
   })
 
-});
+})
 
 module.exports = router;

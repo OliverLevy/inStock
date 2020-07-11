@@ -46,8 +46,7 @@ export default class LocationList extends Component {
           <h5 className="locationCard__labels-horizontal">CATEGORIES</h5>
         </section>
         {this.state.warehouse.map((item) => (
-         <Link  to={`warehouses/${item.id}`}><LocationCard
-            key={item.id}
+         <Link  to={`warehouses/${item.id}`} key={item.id}><LocationCard
             warehouseName={item.name}
             street={item.address.street}
             location={item.address.location}
