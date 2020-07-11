@@ -23,7 +23,7 @@
     "isInstock": true,
     "categories": "Construction, Home hardware, Reno",
     "warehouseId": "W4",
-    "deleted": true
+    "deleted": false
   },
   {
     "id": "JK2020FD7811203",
@@ -36,7 +36,7 @@
     "isInstock": true,
     "categories": "Footwear, Safety, Construction",
     "warehouseId": "W4",
-    "deleted": true
+    "deleted": false
   },
   {
     "id": "JK2020FD7811204",
