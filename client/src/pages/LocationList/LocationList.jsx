@@ -12,6 +12,23 @@ export default class LocationList extends Component {
     };
   }
 
+  addWarehouse = e => {
+    const formData = new formData(e.target);
+    e.preventDefault()
+
+    for (let [key, value] of formData.entries())
+
+    axios.post("http://localhost:8080/warehouses", {
+      "id": formData.get("id"),
+      "name": formData.get("name"),
+      "address": {
+        "street": formData.get("street"),
+        "location": formData.get("location")
+      }
+    })  
+  }
+  
+
   componentDidMount() {
     axios
       .get(`http://localhost:8080/warehouses`)

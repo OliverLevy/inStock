@@ -5,8 +5,6 @@ import "./LocationDetail.scss";
 import Checkitems from './components/Checkitems';
 
 
-
-
 export default class LocationDetail extends Component {
   
   state = {
@@ -31,12 +29,8 @@ axios.get(`http://localhost:8080/warehouses/${params.id}`)
   .catch((error) => {
     console.log(error)
 });} 
-
-              
             
 render() {
-
-  
 
     if (this.state.currentWarehouse.length === 0){
       console.log("this worked")
@@ -48,7 +42,6 @@ render() {
 
    return (
 
-
 <div className="locationDetail">
 
   <section className="locationDetail__header"> 
@@ -58,11 +51,8 @@ render() {
       <div className="locationDetail__header locationDetail__address" >
         <h5>ADRESS</h5>
         <p>{this.state.currentWarehouse.address.street}</p>
-        <p>{this.state.currentWarehouse.address.location}</p>
-        
-        
+        <p>{this.state.currentWarehouse.address.location}</p>     
       </div>
-
       <div className="locationDetail__header locationDetail__address" >
         <h5>CONTACT</h5>
         <p>{this.state.currentWarehouse.contact.name}</p>
@@ -70,18 +60,14 @@ render() {
         <p>{this.state.currentWarehouse.contact.phone}</p>
         <p>{this.state.currentWarehouse.contact.email}</p>
       </div>
-      
-
   </section>
 
     <section className="locationDetail__horizontal">
-
       <h5 className='locationCard__label-horizontal locationCard__lastOrder'>ITEM</h5>
       <h5 className='locationCard__label-horizontal locationCard__lastOrder'>LAST ORDERED</h5>
       <h5 className='locationCard__label-horizontal locationCard__lastOrder'>LOCATION</h5>
       <h5 className='locationCard__label-horizontal locationCard__lastOrder'>QUANTITY</h5>
       <h5 className='locationCard__label-horizontal locationCard__lastOrder'>STATUS</h5>
-
     </section>   
     <Checkitems warehouseItems={this.state.currentWarehouseInventory}/>    
      </div>
