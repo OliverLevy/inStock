@@ -44,8 +44,6 @@ render() {
           <h5 className='inventoryCard__label-horizontal'>STATUS</h5>
 
         </section>
-        
-
         {this.state.inventory.map((item) => 
         <div className="inventoryCard__contain" key={item.id}>
         <Dropdown />
@@ -61,5 +59,6 @@ render() {
     </div>
     <AddInventory/>
     </>
+
   );
 }}

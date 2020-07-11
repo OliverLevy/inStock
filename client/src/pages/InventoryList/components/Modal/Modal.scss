@@ -12,27 +12,52 @@
     }
 
     &__body{
+
         height:400px;
         width:400px;
-        background-color: white;
-       
-        
+        background-color: orange;
+        position:relative;
+        top: 30vh;
+        left: 40vw;
+        display: flex;
+        flex-direction: column;     
     }
-    &__button{
+    &__form{
+        margin-top:48px;
+        display: flex;
+        flex-direction: column;
+    }
+    &__button-open{
         height: 60px;
         width: 60px;
         border-radius: 50%;
         background-image: url('../../../../assets/icons/Icon-add.svg') ;
         background-position: center;
         background-size: cover;
-        height: 60px;
-        width: 60px;
         border: none;
         text-decoration: none;
         background-color: $accent;
-        position: absolute;
+        position: sticky;
         left: 90%;
-        position: static;       
+            
+    }
+    &__input-wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+     
+        
+    }
+    &__button-wrapper{
+        display: flex;
+        flex-direction: row-reverse;
+              
+    }
+    &__form-button{
+        width: 160px;
+        height: 48px;
+        margin-right: 16px;
+        
     }
 
 
