@@ -1,8 +1,10 @@
 @import '../../../../partials/variables';
 
 .modal{
+
     background-color: white;
     color:black;
+    margin: 200px auto;
 
     &__button{
         width: 60px;
@@ -13,6 +15,8 @@
         height:400px;
         width:400px;
         background-color: white;
+       
+        
     }
     &__button{
         height: 60px;
@@ -26,9 +30,10 @@
         border: none;
         text-decoration: none;
         background-color: $accent;
-
-
-        
+        position: absolute;
+        left: 90%;
+        position: static;       
     }
+
 
 }
