@@ -23,7 +23,7 @@
     "isInstock": true,
     "categories": "Construction, Home hardware, Reno",
     "warehouseId": "W4",
-    "deleted": true
+    "deleted": false
   },
   {
     "id": "JK2020FD7811203",
