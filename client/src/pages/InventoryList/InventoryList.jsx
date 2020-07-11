@@ -3,17 +3,15 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import InventoryCard from './components/InventoryCard';
+import AddInventory from './components/Modal';
 import './InventoryList.scss';
 import '../../components/Dropdown/Dropdown';
 import Dropdown from '../../components/Dropdown/Dropdown';
 
-
-
 export default class InventoryList extends Component {
-
-  state = {
-    inventory :[]
-  }
+state={
+  inventory: [],
+}
 
   componentDidMount () {
    
@@ -30,9 +28,8 @@ export default class InventoryList extends Component {
 render() {
 
   return (
-
+    <>
     <div className="inventoryList">
-
       <section className="inventoryList__header"> 
         <h1>Inventory</h1>
         <input type="text" placeholder='Search' className='inventoryList__searchBar'/>
@@ -52,16 +49,17 @@ render() {
         {this.state.inventory.map((item) => 
         <div className="inventoryCard__contain" key={item.id}>
         <Dropdown />
-
         <Link to={`/inventory/${item.id}`}>
         <InventoryCard
           inventory = {this.state.inventory} key = {item.id} name={item.name} description={item.description} 
           quantity={item.quantity} lastOrdered={item.lastOrdered} city={item.city} isInstock={item.isInstock}
           category={item.category} warehouseId={item.warehouseId}/>
-        </Link>
+        </Link>        
         </div>
         )}
           
     </div>
+    <AddInventory/>
+    </>
   );
 }}
