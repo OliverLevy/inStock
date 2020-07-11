@@ -1,0 +1,129 @@
+@import "../../App.scss";
+
+.locationModal {
+// modal style
+        &__overlay{
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #32323292
+        }
+        &__content{
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border: 1px solid #ccc;
+          background-color: #fff;
+          overflow: auto;
+          border-radius: 4px;
+          outline: none;
+          padding: 20px;
+          @include tablet{
+            top: 8em;
+            left: 5em;
+            right: 5em;
+            bottom: 8em;
+          }
+          @include desktop{
+            top: 12em;
+            left: 20em;
+            right: 20em;
+            bottom: 12em;
+          }
+        }
+
+  &__title {
+    margin-bottom: 1em;
+  }
+  &__button {
+    width: 4rem;
+    height: 4rem;
+    background-color: $accent;
+    border: none;
+    border-radius: 50%;
+    background-image: url(../../assets/icons/Icon-add.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 10px 15px 3px #afafaf7e;
+    position: fixed;
+    bottom: 10em;
+    right: 2em;
+    @include tablet {
+      width: 5rem;
+      height: 5rem;
+      right: 5em;
+    }
+  }
+
+  &__form {
+    &-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1em;
+      select{
+          background:$inputBg;
+          padding: 10px 0 10px 10px;
+          border: 1px solid $inputBorder;
+          font-size: 0.75rem;
+          color: $primary;
+          font-family: Avenir;
+      }
+    }
+    &-label {
+      margin-bottom: 0.3em;
+      font-size: 0.75rem;
+      line-height: 1.25rem;
+      color: #afafaf;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    &-input {
+      outline: none;
+      padding: 10px 0 10px 10px;
+      border-radius: 5px;
+      width: 100%;
+      background-color: $inputBg;
+      border: 1px solid $inputBorder;
+      font-size: 0.75rem;
+      &::placeholder {
+        color: $primary;
+        font-family: Avenir;
+      }
+    }
+    &-textarea {
+      resize: none;
+      outline: none;
+      background-color: $inputBg;
+      border: 1px solid $inputBorder;
+    }
+  }
+
+//   BUTTONS
+&__buttons{
+    display: flex;
+    flex-direction: column-reverse;
+}
+  &__cancel{
+      background-color: white;
+      border:none;
+      color:$accent;
+      padding:10px 0;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 0.75rem;
+  }
+  &__save{
+      background-color: $accent;
+      color:white;
+      width: 100%;
+      border:none;
+      padding:10px 0;
+      border-radius:5px;
+      font-size: 0.75rem;
+
+  }
+}

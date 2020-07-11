@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./LocationList.scss";
 import LocationCard from "../../components/LocationCard/LocationCard";
 import axios from "axios";
+import LocationModal from '../../components/LocationModal/LocationModal';
 
 export default class LocationList extends Component {
   constructor(props) {
@@ -57,6 +58,8 @@ export default class LocationList extends Component {
             category={item.inventoryCategories}
           /></Link> 
         ))}
+
+        <LocationModal/>
       </div>
     );
   }
