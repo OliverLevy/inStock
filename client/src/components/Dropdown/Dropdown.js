@@ -17,6 +17,7 @@ export default class Dropdown extends Component {
   };
 
   turnOffMenu = (event) => {
+    console.log(event)
       if(!this.dropdownMenu.contains(event.target)){
 
           this.setState({ showMenu: false }, () => {
