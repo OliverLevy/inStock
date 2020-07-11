@@ -1,150 +1,88 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState } from "react";
 import Modal from "react-modal";
+import { default as ToggleSwitch } from "react-switch";
 import "./Modal.scss";
 import addIcon from "../../../../assets/icons/Icon-add.svg";
 
-Modal.setAppElement('#root')
+Modal.setAppElement("#root");
 
-function AddInventory () {
-    const [modalIsOpen, setModalIsOpen] = useState(false)
+class AddInventory extends React.Component {
+  state = {
+    modelIsOpen: true,
+  };
 
+  toggleModal = () => {
+    if (this.state.modelIsOpen === false) {
+      this.setState({
+        modelIsOpen: true,
+      });
+    } else {
+      this.setState({
+        modelIsOpen: false,
+      });
+    }
+  };
+
+  render() {
     return (
+      <div>
+        <button onClick={this.toggleModal}>Open Model</button>
+        <Modal
+          isOpen={this.state.modelIsOpen}
+          className="add-item__modal"
+          overlayClassName="add-item__modal-overlay"
+        >
+          <h1>Create New</h1>
+          <form>
+            <div>
+              <label>
+                <h5>PRODUCT</h5>
+                <input type="text" />
+              </label>
+              <label>
+                <h5>LAST ORDERED</h5>
+                <input type="text" />
+              </label>
+            </div>
 
-        <div className="modal">
-            <button className="modal__button-open" onClick={()=> setModalIsOpen(true)}></button>
-            <Modal className="modal__body" isOpen={modalIsOpen} shouldCloseOnOverlayClick={false} onRequestClose={()=> setModalIsOpen(false)}>
-            <h1>Create New</h1>
-                        <form className="modal__form" onSubmit={() => setModalIsOpen(false)}action="">
+            <div>
+              <label>
+                <h5>CITY</h5>
+                <input type="text" />
+              </label>
+              <select>
+                <h5>COUNTRY</h5>
+                <option>Canada</option>
+              </select>
+            </div>
 
-                            <div className="modal__input-wrapper">
-                                <label name="name">
-                                    PRODUCT
-                                    <input type="text"/>
-                                </label>
-                                <label htmlFor="">
-                                    LAST ORDERED
-                                    <input type="text"/>
-                                </label>
-                             </div>
+            <div>
+              <label>
+                <h5>QUANTITY</h5>
+                <input type="text" />
+              </label>
+              <ToggleSwitch
+                onChange={this.handleSwitch}
+                checked={this.state.switchValue}
+              />
+            </div>
 
-                             <div className="modal__input-wrapper">
-                                <label name="name">
-                                    CITY
-                                    <input type="text"/>
-                                </label>
-                                <select>
-                                    COUNTRY
-                                    <option>
-                                        Canada
-                                    </option>
-                                </select>
-                             </div>
+            <label>
+              <h5>ITEM DESCRIPTION</h5>
+              <textarea type="text" />
+            </label>
 
-                             <div className="modal__input-wrapper">
-                                <label htmlFor="">
-                                QUANTITY
-                                    <input type="text"/>
-                                </label>
-                                <label htmlFor="">
-                                SWITCH
-                                    <input type="text"/>
-                                </label>
-                             </div>
-
-                             <label htmlFor="">
-                                 ITEM DESCRIPTION
-                                 <textarea type="text"/>
-                             </label>
-                            
-                            <div className="modal__button-wrapper">
-                                <button className="modal__form-button">SAVE</button>
-                                <button className="modal__form-button" onClick={() => setModalIsOpen(false)}>CANCEL</button>
-                            </div>
-                         </form>
-            </Modal>
-        </div>
-    )
+            <div>
+              <button>SAVE</button>
+              <button onClick={this.toggleModal}>
+                CANCEL
+              </button>
+            </div>
+          </form>
+        </Modal>
+      </div>
+    );
+  }
 }
 
 export default AddInventory;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export default class AddInventory extends Component {
-//     constructor()
-//     {super()
-      
-//       this.handleOpenModal = this.handleOpenModal.bind(this);
-//       this.handleCloseModal = this.handleCloseModal.bind(this);
-//       this.state = {
-//         showModal: false
-//       }}
-//       handleOpenModal () {
-//         this.setState({ showModal: true });
-//       }
-      
-//       handleCloseModal () {
-//         this.setState({ showModal: false });
-//       }
-    
-//     render() {
-//         return (
-//             <div className="modal">
-//             <button src={addIcon} className="modal__button" onClick={this.handleOpenModal}></button>
-//                 <Modal className="modal__body"
-//                     shouldCloseOnOverlayClick={false}
-//                     isOpen={this.state.showModal}
-//                    >
-//                         <h1>Create New</h1>
-//                         <form onSubmit={this.handleCloseModal} action="">
-//                             <label htmlFor="">
-//                                 <input type="text"/>
-//                             </label>
-//                             <label htmlFor="">
-//                                 <input type="text"/>
-//                             </label>
-//                             <label htmlFor="">
-//                                 <input type="text"/>
-//                             </label>
-//                             <label htmlFor="">
-//                                 <input type="text"/>
-//                             </label>
-//                             <label htmlFor="">
-//                                 <textarea type="text"/>
-//                             </label>
-//                             <button>SAVE</button>
-//                             <button>CANCEL</button>
-//                         </form>
-//                 </Modal>
-//             </div>
-//         )
-//     }
-// }

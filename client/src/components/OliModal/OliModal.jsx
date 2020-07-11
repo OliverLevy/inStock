@@ -6,7 +6,7 @@ import './OliModal.scss'
 export default class OliModal extends Component {
 
   state={
-    modelIsOpen: true,
+    modelIsOpen: false,
     switchValue: false
   }
 

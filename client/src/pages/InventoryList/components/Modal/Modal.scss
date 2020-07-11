@@ -1,64 +1,30 @@
-@import '../../../../partials/variables';
+@import "../../../../partials/mixins";
+@import "../../../../partials/variables";
+@import '../../../../partials/fonts';
 
-.modal{
+.add-item{
+  &__modal-overlay{
+    background-color: rgba(0, 0, 0, .4);
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
+  &__modal{
+    height: 100vh;
+    width: 100%;
     background-color: white;
-    color:black;
-    margin: 200px auto;
+    display: flex;
+    flex-direction: column;
 
-    &__button{
-        width: 60px;
-        height: 20px;
+    @include tablet{
+      height: 624px;
+      width: 576px;
+      border-radius: 4px;
     }
-
-    &__body{
-
-        height:400px;
-        width:400px;
-        background-color: orange;
-        position:relative;
-        top: 30vh;
-        left: 40vw;
-        display: flex;
-        flex-direction: column;     
-    }
-    &__form{
-        margin-top:48px;
-        display: flex;
-        flex-direction: column;
-    }
-    &__button-open{
-        height: 60px;
-        width: 60px;
-        border-radius: 50%;
-        background-image: url('../../../../assets/icons/Icon-add.svg') ;
-        background-position: center;
-        background-size: cover;
-        border: none;
-        text-decoration: none;
-        background-color: $accent;
-        position: sticky;
-        left: 90%;
-            
-    }
-    &__input-wrapper{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-     
-        
-    }
-    &__button-wrapper{
-        display: flex;
-        flex-direction: row-reverse;
-              
-    }
-    &__form-button{
-        width: 160px;
-        height: 48px;
-        margin-right: 16px;
-        
-    }
-
-
+  }
 }
