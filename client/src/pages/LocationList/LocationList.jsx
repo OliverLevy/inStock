@@ -25,7 +25,31 @@ export default class LocationList extends Component {
 
   addWarehouse = (e) => {
     e.preventDefault();
-    console.log(e.target.locationName.value);
+    // form validation
+    if(e.target.locationName.value===''){
+      return console.error('Please fill out name form fields')
+    }
+    if(e.target.locationAddress.value===''){
+      return console.error('Please fill out address form fields')
+    }
+    if(e.target.locationCountry.value===''){
+      return console.error('Please fill out country form fields')
+    }
+    if(e.target.locationContactName.value===''){
+      return console.error('Please fill out contact name form fields')
+    }
+    if(e.target.locationContactPosition.value===''){
+      return console.error('Please fill out position form fields')
+    }
+    if(e.target.locationContactPhone.value===''){
+      return console.error('Please fill out phone form fields')
+    }
+    if(e.target.locationContactEmail.value===''){
+      return console.error('Please fill out email form fields')
+    }
+    if(e.target.locationCategories.value===''){
+      return console.error('Please fill out category form fields')
+    }
 
     axios
       .post("http://localhost:8080/warehouses", {

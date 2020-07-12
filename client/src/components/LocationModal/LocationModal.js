@@ -24,6 +24,7 @@ export default class LocationModal extends Component {
           <form
             className="locationModal__form"
             onSubmit={this.props.addWarehouse}
+            id='locationModalForm'
           >
             <section className="locationModal__form-group locationModal__form-group-warehouseName">
               <label
@@ -148,19 +149,22 @@ export default class LocationModal extends Component {
                 placeholder="Use commas to separate each category"
               ></textarea>
             </section>
-            <div className="locationModal__buttons">
+            
+          </form>
+          <div className="locationModal__buttons">
             <button
               className="locationModal__cancel"
               onClick={this.props.toggleModal}
             >
               CANCEL
             </button>
-            <button className="locationModal__save">
+            <button 
+            className="locationModal__save"
+            type='submit'
+            form='locationModalForm'>
               SAVE
             </button>
           </div>
-          </form>
-          
         </Modal>
       </div>
     );
