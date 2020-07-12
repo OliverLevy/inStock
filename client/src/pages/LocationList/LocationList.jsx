@@ -17,16 +17,11 @@ export default class LocationList extends Component {
       .get(`http://localhost:8080/warehouses`)
       .then((res) => {
         this.setState({ warehouse: res.data });
-      console.log(this.state.warehouse[0].address.street)
-
       })
       .catch((error) => {
         console.log("Warehouses Axios error");
       });
   }
-
-
-
 
   render() {
     return (
@@ -49,16 +44,18 @@ export default class LocationList extends Component {
           <h5 className="locationCard__labels-horizontal">CATEGORIES</h5>
         </section>
         {this.state.warehouse.map((item) => (
-         <Link  to={`warehouses/${item.id}`} key={item.id}><LocationCard
-            warehouseName={item.name}
-            street={item.address.street}
-            location={item.address.location}
-            contactName={item.contact.name}
-            contactPosition={item.contact.position}
-            contactEmail={item.contact.email}
-            contactPhone={item.contact.phone}
-            category={item.inventoryCategories}
-          /></Link> 
+          <Link to={`warehouses/${item.id}`} key={item.id}>
+            <LocationCard
+              warehouseName={item.name}
+              street={item.address.street}
+              location={item.address.location}
+              contactName={item.contact.name}
+              contactPosition={item.contact.position}
+              contactEmail={item.contact.email}
+              contactPhone={item.contact.phone}
+              category={item.inventoryCategories}
+            />
+          </Link>
         ))}
       </div>
     );

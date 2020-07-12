@@ -1,5 +1,18 @@
 [
   {
+    "id": "43226604-1312-42f3-aa62-d829681a5eb1",
+    "name": "Oliver Levy",
+    "description": "fhhfhfghfghfghfghfg",
+    "quantity": "45654645",
+    "lastOrdered": "2020-07-08",
+    "city": "Montreal",
+    "country": "Canada",
+    "isInstock": true,
+    "categories": "placeholder",
+    "warehouseId": "W2",
+    "deleted": true
+  },
+  {
     "id": "78230152-b4e3-4d35-8fc4-021e4f06af20",
     "name": "Oliver Levy",
     "description": "vbvb",
