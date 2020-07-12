@@ -31,51 +31,60 @@ class AddInventory extends React.Component {
           isOpen={this.state.modelIsOpen}
           className="add-item__modal"
           overlayClassName="add-item__modal-overlay"
+          // bodyOpenClassName="add-item__document-body"
+          htmlOpenClassName="add-item__document-body"
         >
           <h1>Create New</h1>
-          <form>
-            <div>
-              <label>
-                <h5>PRODUCT</h5>
-                <input type="text" />
-              </label>
-              <label>
-                <h5>LAST ORDERED</h5>
-                <input type="text" />
-              </label>
-            </div>
+          <form className="add-item__form">
+            <label>
+              <h5 className="add-item__label">PRODUCT</h5>
+              <input type="text" className="add-item__input" />
+            </label>
+            <label>
+              <h5 className="add-item__label">LAST ORDERED</h5>
+              <input type="date" className="add-item__input" />
+            </label>
 
-            <div>
-              <label>
-                <h5>CITY</h5>
-                <input type="text" />
-              </label>
-              <select>
-                <h5>COUNTRY</h5>
+            <label>
+              <h5 className="add-item__label">CITY</h5>
+              <input type="text" className="add-item__input" />
+            </label>
+            <label>
+              <h5 className="add-item__label">COUNTRY</h5>
+              <select className="add-item__input">
                 <option>Canada</option>
               </select>
-            </div>
+            </label>
 
+            <label>
+              <h5 className="add-item__label">QUANTITY</h5>
+              <input type="number" className="add-item__input" />
+            </label>
             <div>
-              <label>
-                <h5>QUANTITY</h5>
-                <input type="text" />
-              </label>
-              <ToggleSwitch
-                onChange={this.handleSwitch}
-                checked={this.state.switchValue}
-              />
+              <h5 className="add-item__label">status</h5>
+              <div className='add-item__in-stock-container'>
+                <p>In Stock</p>
+                <ToggleSwitch
+                  onChange={this.handleSwitch}
+                  checked={this.state.switchValue}
+                />
+              </div>
             </div>
 
             <label>
-              <h5>ITEM DESCRIPTION</h5>
-              <textarea type="text" />
+              <h5 className="add-item__label">ITEM DESCRIPTION</h5>
+              <textarea type="text" className="add-item__text-area" />
             </label>
 
-            <div>
-              <button>SAVE</button>
-              <button onClick={this.toggleModal}>
-                CANCEL
+            <div className="add-item__btn-container">
+              <button className="cta-btn">
+                <h4>SAVE</h4>
+              </button>
+              <button
+                onClick={this.toggleModal}
+                className="cta-btn cta-btn--cancel"
+              >
+                <h4>CANCEL</h4>
               </button>
             </div>
           </form>
