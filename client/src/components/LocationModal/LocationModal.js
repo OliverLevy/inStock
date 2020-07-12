@@ -33,20 +33,49 @@ export default class LocationModal extends Component {
           <h2 className="locationModal__title">Add New</h2>
           {/* FORM */}
           <form className="locationModal__form">
-            <section className="locationModal__form-group">
+            <section className="locationModal__form-group locationModal__form-group-warehouseName">
               <label
                 htmlFor="locationName"
                 className="locationModal__form-label"
               >
-                NAME
+                WAREHOUSE
               </label>
               <input
-                placeholder="Warehouse Name"
+                placeholder="Name &#38; ID"
                 type="text"
                 className="locationModal__form-input"
                 id="locationName"
               />
             </section>
+
+            <section className="locationModal__form-group">
+              <label
+                htmlFor="locationAddress"
+                className="locationModal__form-label"
+              >
+                ADDRESS
+              </label>
+              <input
+              placeholder='Enter Address'
+                type="text"
+                className="locationModal__form-input"
+                id="locationAddressStreet"
+              />
+            </section>
+
+            <section className="locationModal__form-group">
+              <label
+                htmlFor="locationCountry"
+                className="locationModal__form-label"
+              >
+                LOCATION
+              </label>
+              <select name="locationCountry" id="locationCountry">
+                <option value="Toronto, CAN">Toronto, CAN</option>
+              </select>
+            </section>
+
+
             {/* contact */}
             <section className="locationModal__form-group">
               <label
@@ -56,7 +85,7 @@ export default class LocationModal extends Component {
                 Contact Name
               </label>
               <input
-                placeholder="Name"
+                placeholder="Enter Name"
                 type="text"
                 className="locationModal__form-input"
                 id="locationContactName"
@@ -68,10 +97,10 @@ export default class LocationModal extends Component {
                 htmlFor="locationContactPosition"
                 className="locationModal__form-label"
               >
-                Contact Position
+                Position
               </label>
               <input
-                placeholder="Position"
+                placeholder="Enter Position"
                 type="text"
                 className="locationModal__form-input"
                 id="locationContactPosition"
@@ -83,10 +112,10 @@ export default class LocationModal extends Component {
                 htmlFor="locationContactPhone"
                 className="locationModal__form-label"
               >
-                Contact Phone
+                Phone number
               </label>
               <input
-                placeholder="123-4567-8901"
+                placeholder="(000)000-0000"
                 type="tel"
                 className="locationModal__form-input"
                 id="locationContactPhone"
@@ -98,70 +127,29 @@ export default class LocationModal extends Component {
                 htmlFor="locationContactEmail"
                 className="locationModal__form-label"
               >
-                Contact Email
+               Email
               </label>
               <input
-                placeholder="example@domain.com"
+                placeholder="email@instock.com"
                 type="email"
                 className="locationModal__form-input"
                 id="locationContactEmail"
               />
             </section>
+   
 
-            <section className="locationModal__form-group">
-              <label
-                htmlFor="locationAddressStreet"
-                className="locationModal__form-label"
-              >
-                Street
-              </label>
-              <input
-                type="text"
-                className="locationModal__form-input"
-                id="locationAddressStreet"
-              />
-            </section>
-
-            <section className="locationModal__form-group">
-              <label
-                htmlFor="locationAddressCity"
-                className="locationModal__form-label"
-              >
-                City
-              </label>
-              <input
-                placeholder="Toronto"
-                type="text"
-                className="locationModal__form-input"
-                id="locationAddressCity"
-              />
-            </section>
-
-            <section className="locationModal__form-group">
-              <label
-                htmlFor="locationCountry"
-                className="locationModal__form-label"
-              >
-                Country
-              </label>
-              <select name="locationCountry" id="locationCountry">
-                <option value="USA">USA</option>
-                <option value="CAN">CAN</option>
-              </select>
-            </section>
-
-            <section className="locationModal__form-group">
+            <section className="locationModal__form-group locationModal__form-group-category">
               <label
                 htmlFor="locationCategories"
                 className="locationModal__form-label"
               >
-                INVENTORY CATEGORIES
+                Categories
               </label>
               <textarea
                 name="locationCategories"
                 id="locationDeCategories"
                 className="locationModal__form-textarea"
-              ></textarea>
+              >Use commas to separate each category</textarea>
             </section>
           </form>
           <div className="locationModal__buttons">
