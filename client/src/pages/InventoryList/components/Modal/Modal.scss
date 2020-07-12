@@ -164,5 +164,15 @@
   &--cancel {
     background-color: white;
     color: $accent;
+
+  }
+  &:focus {
+    outline: none;
+    color: white;
+  }
+
+  &:hover {
+    background-color: $accentHover;
+    color: white;
   }
 }
