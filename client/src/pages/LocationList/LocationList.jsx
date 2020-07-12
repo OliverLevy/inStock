@@ -3,23 +3,60 @@ import { Link } from "react-router-dom";
 import "./LocationList.scss";
 import LocationCard from "../../components/LocationCard/LocationCard";
 import axios from "axios";
-import LocationModal from '../../components/LocationModal/LocationModal';
+import LocationModal from "../../components/LocationModal/LocationModal";
 
 export default class LocationList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      warehouse: [],
-    };
-  }
+  state = {
+    warehouse: [],
+    modelIsOpen: false,
+  };
+
+  toggleModal = (e) => {
+    if (this.state.modelIsOpen === false) {
+      this.setState({
+        modelIsOpen: true,
+      });
+    } else {
+      this.setState({
+        modelIsOpen: false,
+      });
+    }
+  };
+
+  addWarehouse = (e) => {
+    e.preventDefault();
+    console.log(e.target.locationName.value);
+
+    axios
+      .post("http://localhost:8080/warehouses", {
+        newWarehouse: {
+          locationName: e.target.locationName.value,
+          locationAddress: e.target.locationAddress.value,
+          locationCountry: e.target.locationCountry.value,
+          contact: {
+            locationContactName: e.target.locationContactName.value,
+            locationContactPosition: e.target.locationContactPosition.value,
+            locationContactPhone: e.target.locationContactPhone.value,
+            locationContactEmail: e.target.locationContactEmail.value,
+          },
+          locationCategories: e.target.locationCategories.value,
+        },
+      })
+      .then(suc => {
+        this.setState({
+          warehouse: suc.data,
+          modelIsOpen: false
+        })
+      })
+      .catch(console.log);
+  };
 
   componentDidMount() {
     axios
       .get(`http://localhost:8080/warehouses`)
       .then((res) => {
         this.setState({ warehouse: res.data });
-      console.log(this.state.warehouse[0].address.street)
-
+        console.log(this.state.warehouse[0].address.street);
       })
       .catch((error) => {
         console.log("Warehouses Axios error");
@@ -47,19 +84,26 @@ export default class LocationList extends Component {
           <h5 className="locationCard__labels-horizontal">CATEGORIES</h5>
         </section>
         {this.state.warehouse.map((item) => (
-         <Link  to={`warehouses/${item.id}`} key={item.id}><LocationCard
-            warehouseName={item.name}
-            street={item.address.street}
-            location={item.address.location}
-            contactName={item.contact.name}
-            contactPosition={item.contact.position}
-            contactEmail={item.contact.email}
-            contactPhone={item.contact.phone}
-            category={item.inventoryCategories}
-          /></Link> 
+          <Link to={`warehouses/${item.id}`} key={item.id}>
+            <LocationCard
+              warehouseName={item.name}
+              street={item.address.street}
+              location={item.address.location}
+              contactName={item.contact.name}
+              contactPosition={item.contact.position}
+              contactEmail={item.contact.email}
+              contactPhone={item.contact.phone}
+              category={item.inventoryCategories}
+            />
+          </Link>
         ))}
 
-        <LocationModal/>
+        <LocationModal
+          addWarehouse={this.addWarehouse}
+          toggleModal={this.toggleModal}
+          modelIsOpen={this.state.modelIsOpen}
+          test={this.test}
+        />
       </div>
     );
   }

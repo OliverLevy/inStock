@@ -1,68 +1,30 @@
 import React, { Component } from "react";
 import Modal from "react-modal";
 import "./style.scss";
-import axios from 'axios';
+import axios from "axios";
 
-Modal.setAppElement('#root')
+Modal.setAppElement("#root");
 
 export default class LocationModal extends Component {
-  state = {
-    modelIsOpen: false
-    
-
-  };
-  toggleModal1 = () => {
-    if (this.state.modelIsOpen === false) {
-      this.setState({
-        modelIsOpen: true,
-      });
-    } else {
-      this.setState({
-        modelIsOpen: false,
-      });
-    }
-  };
-
-
-  
-  handleSubmit=(e)=>{
-    e.preventDefault();
-  }
-  addWarehouse = e => {
-    const formData = new formData(e.target);
-    e.preventDefault()
-
-    for (let [key, value] of formData.entries())
-
-    axios.post("http://localhost:8080/inventory", {
-      "id": formData.get("id"),
-      "name": formData.get("name"),
-      "description": formData.get("description"),
-      "quantity": formData.get("quantity"),
-      "lastOrdered": formData.get("lastOrdered"),
-      "city": formData.get("city"),
-      "country": formData.get("country"),
-      "isInstock": formData.get("isInstock"),
-      "categories": formData.get("categories"),
-      "warehouseId": formData.get("warehousId"),
-    })  
-  }
-
   render() {
+    console.log(this.props)
     return (
       <div className="locationModal">
         <button
           className="locationModal__button"
-          onClick={this.toggleModal1}
+          onClick={this.props.toggleModal}
         ></button>
         <Modal
-          isOpen={this.state.modelIsOpen}
+          isOpen={this.props.modelIsOpen}
           className="locationModal__content"
           overlayClassName="locationModal__overlay"
         >
           <h2 className="locationModal__title">Add New</h2>
           {/* FORM */}
-          <form className="locationModal__form" onSubmit={this.props.handleSubmit}>
+          <form
+            className="locationModal__form"
+            onSubmit={this.props.addWarehouse}
+          >
             <section className="locationModal__form-group locationModal__form-group-warehouseName">
               <label
                 htmlFor="locationName"
@@ -75,7 +37,7 @@ export default class LocationModal extends Component {
                 type="text"
                 className="locationModal__form-input"
                 id="locationName"
-                name='locationName'
+                name="locationName"
               />
             </section>
 
@@ -87,8 +49,8 @@ export default class LocationModal extends Component {
                 ADDRESS
               </label>
               <input
-              name='locationAddress'
-              placeholder='Enter Address'
+                name="locationAddress"
+                placeholder="Enter Address"
                 type="text"
                 className="locationModal__form-input"
                 id="locationAddress"
@@ -107,7 +69,6 @@ export default class LocationModal extends Component {
               </select>
             </section>
 
-
             {/* contact */}
             <section className="locationModal__form-group">
               <label
@@ -117,7 +78,7 @@ export default class LocationModal extends Component {
                 Contact Name
               </label>
               <input
-              name='locationContactName'
+                name="locationContactName"
                 placeholder="Enter Name"
                 type="text"
                 className="locationModal__form-input"
@@ -138,7 +99,6 @@ export default class LocationModal extends Component {
                 className="locationModal__form-input"
                 id="locationContactPosition"
                 name="locationContactPosition"
-
               />
             </section>
 
@@ -155,7 +115,6 @@ export default class LocationModal extends Component {
                 className="locationModal__form-input"
                 id="locationContactPhone"
                 name="locationContactPhone"
-
               />
             </section>
 
@@ -164,7 +123,7 @@ export default class LocationModal extends Component {
                 htmlFor="locationContactEmail"
                 className="locationModal__form-label"
               >
-               Email
+                Email
               </label>
               <input
                 placeholder="email@instock.com"
@@ -172,10 +131,8 @@ export default class LocationModal extends Component {
                 className="locationModal__form-input"
                 id="locationContactEmail"
                 name="locationContactEmail"
-
               />
             </section>
-   
 
             <section className="locationModal__form-group locationModal__form-group-category">
               <label
@@ -188,25 +145,22 @@ export default class LocationModal extends Component {
                 name="locationCategories"
                 id="locationDeCategories"
                 className="locationModal__form-textarea"
-                defaultValue='Use commas to separate each category'
+                placeholder="Use commas to separate each category"
               ></textarea>
             </section>
-          </form>
-          <div className="locationModal__buttons">
+            <div className="locationModal__buttons">
             <button
               className="locationModal__cancel"
-              onClick={this.toggleModal1}
+              onClick={this.props.toggleModal}
             >
               CANCEL
             </button>
-            <button
-            type='submit'
-              className="locationModal__save"
-              onClick={this.submitNewWarehouse}
-            >
+            <button className="locationModal__save">
               SAVE
             </button>
           </div>
+          </form>
+          
         </Modal>
       </div>
     );
