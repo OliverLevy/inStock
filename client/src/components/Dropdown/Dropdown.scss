@@ -1,6 +1,6 @@
 @import '../../App.scss';
 .dropdownMenu{
-    z-index:999;
+    // z-index:1;
     &__button{
         border:none;
         background-color:white;
@@ -16,7 +16,7 @@
         position:relative;
     }
     &__remove-button{
-        z-index:998;
+        // z-index:998;
         font-family: Avenir, sans-serif;
         border: 1px solid black;
         border-radius:2px;

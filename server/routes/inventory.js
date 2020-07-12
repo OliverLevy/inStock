@@ -40,8 +40,8 @@ router.post("/", (req,res)=>{
     city: req.body.city,
     country: req.body.country,
     isInstock: req.body.isInstock,
-    categoies: req.body.categoies,
-    warehouseId: req.body.warehouseId,
+    categories: 'placeholder',
+    warehouseId: 'W2',
     deleted: false
   }
   if(!postItem.name || !postItem.city || !postItem.country){

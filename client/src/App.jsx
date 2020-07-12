@@ -7,13 +7,15 @@ import { BrowserRouter, Route, Switch, useParams} from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import "./App.scss";
 
+
+
 class App extends React.Component {
 
   render() {
     // let x = useParams()
     return (
       
-      <div>
+      <div> 
         <BrowserRouter>
           <NavBar test={useParams}/>
 
@@ -31,3 +33,14 @@ class App extends React.Component {
 }
 
 export default App;
+
+
+
+
+{/* <h1>WTF</h1>
+<Modal>
+  <button className="modal-button" onClick= {this.showModal}>OPEN</button>
+  <h2>Modal title </h2>
+  <p>Modasl Body</p>
+  <button onCick={this.hideModal}>Close</button>   
+</Modal> */}

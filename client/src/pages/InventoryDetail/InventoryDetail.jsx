@@ -20,7 +20,6 @@ export default class InventoryDetail extends Component {
   }
 
   render() {
-    console.log(this.state.item);
     let product = this.state.item;
 
     const inStock = () => {

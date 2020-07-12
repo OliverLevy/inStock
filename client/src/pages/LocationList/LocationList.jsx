@@ -80,7 +80,6 @@ export default class LocationList extends Component {
       .get(`http://localhost:8080/warehouses`)
       .then((res) => {
         this.setState({ warehouse: res.data });
-        console.log(this.state.warehouse[0].address.street);
       })
       .catch((error) => {
         console.log("Warehouses Axios error");
