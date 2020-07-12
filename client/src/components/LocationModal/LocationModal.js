@@ -6,10 +6,11 @@ import axios from 'axios';
 Modal.setAppElement('#root')
 
 export default class LocationModal extends Component {
+    constructor(props){
+        super(props)
+    }
   state = {
-    modelIsOpen: false
-    
-
+    modelIsOpen: false,
   };
   toggleModal1 = () => {
     if (this.state.modelIsOpen === false) {
@@ -23,30 +24,36 @@ export default class LocationModal extends Component {
     }
   };
 
+//   handleSubmit=(event)=>{
+//     event.preventDefault()
+//     console.log(event.target.locationName.value)
+    // const formData = new FormData(event.target);
+    // console.log(formData.get('locationName'), 'is location name')
+    // console.log(formData.get('locationAddress'), 'is location address')
+    // axios.post("http://localhost:8080/warehouse", {
+    //   name: formData.get("locationName"),
+      
+    //   address:{
+    //       street: formData.get("locationAddress"),
+    //       location: formData.get("locationCountry")
+    //   },
+    //   contact:{
+    //       name: formData.get("locationContactName"),
+    //       position: formData.get("locationContactPosition"),
+    //       phone: formData.get("locationContactPhone"),
+    //       email: formData.get("locationContactEmail"),
+    //   },
+    //   inventoryCategories: formData.get("locationCategories")
 
+    // })
+    // .then(function (response) {
+    //     console.log(response);
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   })  }
   
-  handleSubmit=(e)=>{
-    e.preventDefault();
-  }
-  addWarehouse = e => {
-    const formData = new formData(e.target);
-    e.preventDefault()
 
-    for (let [key, value] of formData.entries())
-
-    axios.post("http://localhost:8080/inventory", {
-      "id": formData.get("id"),
-      "name": formData.get("name"),
-      "description": formData.get("description"),
-      "quantity": formData.get("quantity"),
-      "lastOrdered": formData.get("lastOrdered"),
-      "city": formData.get("city"),
-      "country": formData.get("country"),
-      "isInstock": formData.get("isInstock"),
-      "categories": formData.get("categories"),
-      "warehouseId": formData.get("warehousId"),
-    })  
-  }
 
   render() {
     return (
@@ -62,7 +69,7 @@ export default class LocationModal extends Component {
         >
           <h2 className="locationModal__title">Add New</h2>
           {/* FORM */}
-          <form className="locationModal__form" onSubmit={this.props.handleSubmit}>
+          <form onSubmit={this.props.handleSubmit} className="locationModal__form" id='locationModalForm'>
             <section className="locationModal__form-group locationModal__form-group-warehouseName">
               <label
                 htmlFor="locationName"
@@ -201,8 +208,9 @@ export default class LocationModal extends Component {
             </button>
             <button
             type='submit'
-              className="locationModal__save"
-              onClick={this.submitNewWarehouse}
+            form='locationModalForm'
+            className="locationModal__save"
+            //   onClick={this.submitNewWarehouse}
             >
               SAVE
             </button>
