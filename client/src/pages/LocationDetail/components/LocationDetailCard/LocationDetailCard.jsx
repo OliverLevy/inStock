@@ -3,9 +3,7 @@ import './LocationDetailCard.scss';
 import RemoveLogo from "../../../../assets/icons/Icon-kebab-default.svg"
 
 
-
 export default function LocationDetailCard( {inventory} ) {
-
     return (
         <div>
              <section className="locationList__card locationDetailCard">

@@ -36,9 +36,7 @@
     @include desktop-padding;
   }
   &__horizontal {
-    
         display: none;
-    
         @include tablet{
         display:flex;
         justify-content: space-between;
@@ -46,7 +44,6 @@
       }}
 
   &__searchBar {
-    
       padding: 15px 40px;
       border-radius: 5px;
       width: 80%;
@@ -55,8 +52,6 @@
       border: 1px solid $inputBorder;
       background-image: url(../../assets/icons/Icon-search.svg);
       background-repeat: no-repeat;
-  
-
     @include tablet{
       height:6vh;
       width: 38%;
@@ -73,7 +68,6 @@
   display: none;
   @include desktop{
     display:flex;
-    // justify-content: space-between;
     width: 77vw;
   }
   & > *{

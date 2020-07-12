@@ -21,7 +21,6 @@ export default class InventoryDetail extends Component {
 
   render() {
     let product = this.state.item;
-
     const inStock = () => {
       if (product.isInstock === true) {
         return (
@@ -60,7 +59,7 @@ export default class InventoryDetail extends Component {
           <div className="inventory-detail__info">
             <div className="inventory-detail__info-item">
               <h5 className="inventory-detail__label">ordered by</h5>
-              <p>missing on server</p>
+              <p>BrainStation</p>
             </div>
             <div className="inventory-detail__info-item">
               <h5 className="inventory-detail__label">reference number</h5>

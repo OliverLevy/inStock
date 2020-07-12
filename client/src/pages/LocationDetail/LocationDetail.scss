@@ -23,9 +23,6 @@
       display: flex;
       justify-content: space-between;
     }
-    h1 {
-      // margin-bottom: 1rem;
-    }
   }
 
   @include tablet {
@@ -34,6 +31,21 @@
 
   @include desktop {
     @include desktop-padding;
+  }
+
+  &__link{
+    display: flex;
+    align-items: center;
+    padding: 0 0 1rem;
+    margin-top: 0.4rem;
+    position: absolute;
+
+    @include tablet{
+      margin-top: 0.7rem;
+    }
+  }
+  &__linkIcon{
+    height: 24px;
   }
   &__horizontal {
     
@@ -97,7 +109,6 @@
   display: none;
   @include desktop{
     display:flex;
-    // justify-content: space-between;
     width: 77vw;
   }
   & > *{
@@ -105,5 +116,13 @@
       width: 20%;
     }
   }
-}}
+}
+h1{
+  position: relative;
+  margin-left: 2rem;
+  @include tablet{
+    margin-left: 1.5rem;
+  }
+}
+}
  

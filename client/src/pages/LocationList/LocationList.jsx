@@ -116,7 +116,6 @@ export default class LocationList extends Component {
         console.log(error);
       })  }
 
-
   render() {
     return (
       <div className="locationList">

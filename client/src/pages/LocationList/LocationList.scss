@@ -64,7 +64,6 @@
   display: none;
   @include desktop{
     display:flex;
-    // justify-content: space-between;
     width: 77vw;
   }
   & > *{

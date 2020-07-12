@@ -63,6 +63,9 @@
       height: 5rem;
       right: 5em;
     }
+    @include desktop{
+      right: 12rem;
+    }
   }
 
   &__form {
@@ -71,10 +74,8 @@
           flex-wrap: wrap;
           justify-content: space-between;
         padding:0 2em;
-
       }
     &-group {
-
       display: flex;
       flex-direction: column;
       margin-bottom: 1em;
@@ -160,13 +161,25 @@
     padding: 15px 10px;
     width: 100%;
     border-radius: 5px;
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
     @include tablet {
+      font-size: 0.875rem;
       width: 30%;
       padding: 16px 10px;
-    //   font-size: 1rem;
+    }
+   
+    &:focus {
+      outline: none;
+      color: white;
+    }
+  
+    &:hover {
+      background-color: $accentHover;
+      color: white;
     }
   }
+  
   &__save {
     background-color: $accent;
     color: white;
@@ -174,11 +187,11 @@
     border: none;
     padding: 15px 10px;
     border-radius: 5px;
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     @include tablet {
+      font-size: 0.875rem;
       width: 30%;
       padding: 16px 10px;
-    //   font-size: 1rem;
     }
   }
 }

@@ -5,9 +5,7 @@ const uuid = require("uuid");
 const fs = require('fs')
 router.use(cors());
 const locations = require("../instock-data/locations.json");
-
 const inventory = require("../instock-data/inventory.json");
-
 const { json } = require("express");
 
 
@@ -15,7 +13,6 @@ const { json } = require("express");
 router.get("/", (req, res) => {
   res.json(locations);
 });
-
 
 router.get("/:id", (req, res) => {
   let currentWarehouseId = req.params.id
@@ -66,7 +63,6 @@ router.post("/", (req, res) => {
     if (err) return console.error('Error writing file', err)
     else console.log('file written successfully')
   })
-
 })
 
 module.exports = router;

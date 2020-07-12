@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import Modal from "react-modal";
 import "./style.scss";
-import axios from "axios";
 
 Modal.setAppElement("#root");
 
 export default class LocationModal extends Component {
   render() {
-    console.log(this.props)
     return (
       <div className="locationModal">
         <button

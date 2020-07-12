@@ -7,8 +7,6 @@ import addIcon from "../../../../assets/icons/Icon-add.svg";
 Modal.setAppElement("#root");
 
 class AddInventory extends React.Component {
-  
-
   switchDisplayValue = () => {
     if (this.props.switchValue === true) {
       return <p>In Stock</p>;
@@ -29,7 +27,6 @@ class AddInventory extends React.Component {
           overlayClassName="add-item__modal-overlay"
           bodyOpenClassName="add-item__document-body"
           htmlOpenClassName="add-item__document-body"
-          // shouldFocusAfterRender
         >
           <h1>Create New</h1>
           <form
