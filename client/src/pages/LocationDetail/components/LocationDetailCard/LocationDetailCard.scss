@@ -14,12 +14,9 @@
   }
 
 .locationDetailCard {
-  //   @include mobile-padding;
   position: relative;
   border-bottom: 1px solid $inputBorder;
   @include tablet {
-    // @include tablet-padding;
-    
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
@@ -38,7 +35,6 @@
 }
 
   @include desktop {
-    //   @include desktop-padding;
     flex-wrap: nowrap;
     padding-bottom: 1rem;
     align-items: baseline;
@@ -48,7 +44,6 @@
     @include tablet {
       margin: 0;
       width: 25%;
-
       }
       &-description {
         width: 35%;

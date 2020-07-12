@@ -73,7 +73,6 @@ export default class InventoryList extends Component {
   }
 
   handleRemove = (id) => {
-    // console.log(id);
     axios
       .delete(`http://localhost:8080/inventory/${id}`)
       .then((res) => this.setState({ inventory: res.data }))
@@ -83,7 +82,6 @@ export default class InventoryList extends Component {
   getInventory = () => {
     axios
       .get("http://localhost:8080/inventory")
-
       .then((res) => {
         this.setState({ inventory: res.data });
       })

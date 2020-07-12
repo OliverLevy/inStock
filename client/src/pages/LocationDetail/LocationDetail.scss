@@ -23,9 +23,6 @@
       display: flex;
       justify-content: space-between;
     }
-    h1 {
-      // margin-bottom: 1rem;
-    }
   }
 
   @include tablet {
@@ -112,7 +109,6 @@
   display: none;
   @include desktop{
     display:flex;
-    // justify-content: space-between;
     width: 77vw;
   }
   & > *{

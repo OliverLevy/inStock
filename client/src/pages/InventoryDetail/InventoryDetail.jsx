@@ -21,7 +21,6 @@ export default class InventoryDetail extends Component {
 
   render() {
     let product = this.state.item;
-
     const inStock = () => {
       if (product.isInstock === true) {
         return (

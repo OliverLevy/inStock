@@ -3,7 +3,6 @@ const router = express.Router();
 const cors = require("cors");
 const uuid = require("uuid");
 const fs = require("fs");
-// router.use(express.json());
 router.use(cors());
 const inventory = require("../instock-data/inventory.json");
 const { SSL_OP_CIPHER_SERVER_PREFERENCE } = require("constants");
@@ -76,6 +75,5 @@ router.delete("/:id", (req,res)=>{
   })
   }
   )
-  
 
 module.exports = router;

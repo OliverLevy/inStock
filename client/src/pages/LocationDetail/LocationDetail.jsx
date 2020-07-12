@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import LocationDetailCard from "./components/LocationDetailCard/LocationDetailCard";
 import "./LocationDetail.scss";
 import Checkitems from "./components/Checkitems";
 import { Link } from "react-router-dom";
@@ -87,13 +86,3 @@ export default class LocationDetail extends Component {
     }
   }
 }
-// const Checkitems = ({warehouseItems}) => {
-// console.log(warehouseItems)
-//   if (warehouseItems.length===0){
-//     return (
-//       <h1>This warehouse is empty</h1>
-//     )
-//   }
-//   else {
-//   return warehouseItems.map( item =>  <LocationDetailCard key={item.id} inventory={item} /> )
-//   }

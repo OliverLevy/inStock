@@ -88,20 +88,5 @@
       "email": "Heather@pens.com"
     },
     "inventoryCategories": "Stationary"
-  },
-  {
-    "id": "2134c914-ee83-4b0d-8a74-fc4b5cf7f5b1",
-    "name": "Warehousename",
-    "address": {
-      "street": "sssss",
-      "location": "Toronto, CAN"
-    },
-    "contact": {
-      "name": "sdf",
-      "position": "sdfsdf",
-      "phone": "sdf",
-      "email": "sdf@email.com"
-    },
-    "inventoryCategories": "sdf"
   }
 ]
