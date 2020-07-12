@@ -120,11 +120,13 @@
       width: 20%;
     }
   }
-}}
- h1{
-   position: relative;
-   margin-left: 2rem;
-   @include tablet{
-     margin-left: 1.5rem;
-   }
- }
+}
+h1{
+  position: relative;
+  margin-left: 2rem;
+  @include tablet{
+    margin-left: 1.5rem;
+  }
+}
+}
+ 

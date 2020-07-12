@@ -2,7 +2,7 @@
 @import "../../../../partials/variables";
 @import "../../../../partials/fonts";
 
-//oliver
+
 .add-item {
   &__document-body {
     overflow: hidden;
@@ -105,12 +105,13 @@
 
   &__open{
     background-color: $accent;
-    height: 48px;
-    width: 48px;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
+    box-shadow: 0 10px 15px 3px #afafaf7e;
     position: fixed;
-    bottom: 3rem;
-    right: 3rem;
+    bottom: 10em;
+    right: 2em;
     color: white;
     z-index: 2;
     border: none;
@@ -122,9 +123,10 @@
       outline: none;
     }
 
-    @include tablet{
-      height: 80px;
-      width: 80px;
+    @include tablet {
+      width: 5rem;
+      height: 5rem;
+      right: 5em;
     }
 
     @include desktop{
