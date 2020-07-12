@@ -3,6 +3,9 @@ import axios from "axios";
 import LocationDetailCard from "./components/LocationDetailCard/LocationDetailCard";
 import "./LocationDetail.scss";
 import Checkitems from "./components/Checkitems";
+import { Link } from "react-router-dom";
+import BackIcon from "../../assets/icons/Icon-back-arrow.svg";
+
 
 export default class LocationDetail extends Component {
   state = {
@@ -35,7 +38,15 @@ export default class LocationDetail extends Component {
     } else {
       return (
         <div className="locationDetail">
+         
           <section className="locationDetail__header">
+            <Link to="/warehouses" className="locationDetail__link">
+              <img
+                  className="locationDetail__linkIcon"
+                  src={BackIcon}
+                  alt="go back icon"
+                />
+            </Link>
             <h1>{this.state.currentWarehouse.name}</h1>
           </section>
           <section className="locationDetail__header locationDetail__subHeader">

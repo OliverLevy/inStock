@@ -35,6 +35,21 @@
   @include desktop {
     @include desktop-padding;
   }
+
+  &__link{
+    display: flex;
+    align-items: center;
+    padding: 0 0 1rem;
+    margin-top: 0.4rem;
+    position: absolute;
+
+    @include tablet{
+      margin-top: 0.7rem;
+    }
+  }
+  &__linkIcon{
+    height: 24px;
+  }
   &__horizontal {
     
         display: none;
@@ -106,4 +121,10 @@
     }
   }
 }}
- 
+ h1{
+   position: relative;
+   margin-left: 2rem;
+   @include tablet{
+     margin-left: 1.5rem;
+   }
+ }
