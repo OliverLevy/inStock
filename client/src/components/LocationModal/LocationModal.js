@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import Modal from "react-modal";
 import "./style.scss";
+import axios from 'axios';
+
+Modal.setAppElement('#root')
 
 export default class LocationModal extends Component {
   state = {
-    modelIsOpen: false,
+    modelIsOpen: false
+    
+
   };
   toggleModal1 = () => {
     if (this.state.modelIsOpen === false) {
@@ -17,7 +22,32 @@ export default class LocationModal extends Component {
       });
     }
   };
-  submitNewWarehouse = () => {};
+
+
+  
+  handleSubmit=(e)=>{
+    e.preventDefault();
+  }
+  addWarehouse = e => {
+    const formData = new formData(e.target);
+    e.preventDefault()
+
+    for (let [key, value] of formData.entries())
+
+    axios.post("http://localhost:8080/inventory", {
+      "id": formData.get("id"),
+      "name": formData.get("name"),
+      "description": formData.get("description"),
+      "quantity": formData.get("quantity"),
+      "lastOrdered": formData.get("lastOrdered"),
+      "city": formData.get("city"),
+      "country": formData.get("country"),
+      "isInstock": formData.get("isInstock"),
+      "categories": formData.get("categories"),
+      "warehouseId": formData.get("warehousId"),
+    })  
+  }
+
   render() {
     return (
       <div className="locationModal">
@@ -32,7 +62,7 @@ export default class LocationModal extends Component {
         >
           <h2 className="locationModal__title">Add New</h2>
           {/* FORM */}
-          <form className="locationModal__form">
+          <form className="locationModal__form" onSubmit={this.props.handleSubmit}>
             <section className="locationModal__form-group locationModal__form-group-warehouseName">
               <label
                 htmlFor="locationName"
@@ -45,6 +75,7 @@ export default class LocationModal extends Component {
                 type="text"
                 className="locationModal__form-input"
                 id="locationName"
+                name='locationName'
               />
             </section>
 
@@ -56,10 +87,11 @@ export default class LocationModal extends Component {
                 ADDRESS
               </label>
               <input
+              name='locationAddress'
               placeholder='Enter Address'
                 type="text"
                 className="locationModal__form-input"
-                id="locationAddressStreet"
+                id="locationAddress"
               />
             </section>
 
@@ -85,6 +117,7 @@ export default class LocationModal extends Component {
                 Contact Name
               </label>
               <input
+              name='locationContactName'
                 placeholder="Enter Name"
                 type="text"
                 className="locationModal__form-input"
@@ -104,6 +137,8 @@ export default class LocationModal extends Component {
                 type="text"
                 className="locationModal__form-input"
                 id="locationContactPosition"
+                name="locationContactPosition"
+
               />
             </section>
 
@@ -119,6 +154,8 @@ export default class LocationModal extends Component {
                 type="tel"
                 className="locationModal__form-input"
                 id="locationContactPhone"
+                name="locationContactPhone"
+
               />
             </section>
 
@@ -134,6 +171,8 @@ export default class LocationModal extends Component {
                 type="email"
                 className="locationModal__form-input"
                 id="locationContactEmail"
+                name="locationContactEmail"
+
               />
             </section>
    
@@ -149,7 +188,8 @@ export default class LocationModal extends Component {
                 name="locationCategories"
                 id="locationDeCategories"
                 className="locationModal__form-textarea"
-              >Use commas to separate each category</textarea>
+                defaultValue='Use commas to separate each category'
+              ></textarea>
             </section>
           </form>
           <div className="locationModal__buttons">
@@ -160,6 +200,7 @@ export default class LocationModal extends Component {
               CANCEL
             </button>
             <button
+            type='submit'
               className="locationModal__save"
               onClick={this.submitNewWarehouse}
             >
