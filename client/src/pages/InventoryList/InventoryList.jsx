@@ -10,25 +10,62 @@ import Dropdown from "../../components/Dropdown/Dropdown";
 export default class InventoryList extends Component {
   state = {
     inventory: [],
+    modelIsOpen: false,
+    switchValue: false,
   };
 
-  addInventory = (e) => {
-    const formData = new formData(e.target);
+  submitNewItem = (e) => {
     e.preventDefault();
+    if (
+      !e.target.name.value ||
+      !e.target.city.value ||
+      !e.target.country.value ||
+      !e.target.quantity.value ||
+      !e.target.lastOrdered.value
+    ) {
+      return console.error("Please fill out all form fields");
+    } else {
+      axios
+        .post("http://localhost:8080/inventory", {
+          name: e.target.name.value,
+          description: e.target.description.value,
+          quantity: e.target.quantity.value,
+          lastOrdered: e.target.lastOrdered.value,
+          city: e.target.city.value,
+          country: e.target.country.value,
+          isInstock: this.state.switchValue,
+        })
+        .then((suc) => {
+          this.setState({
+            inventory: suc.data,
+            modelIsOpen: false
+          });
+        });
+    }
+  };
 
-    for (let [key, value] of formData.entries())
-      axios.post("http://localhost:8080/inventory", {
-        id: formData.get("id"),
-        name: formData.get("name"),
-        description: formData.get("description"),
-        quantity: formData.get("quantity"),
-        lastOrdered: formData.get("lastOrdered"),
-        city: formData.get("city"),
-        country: formData.get("country"),
-        isInstock: formData.get("isInstock"),
-        categories: formData.get("categories"),
-        warehouseId: formData.get("warehousId"),
+  toggleModal = () => {
+    if (this.state.modelIsOpen === false) {
+      this.setState({
+        modelIsOpen: true,
       });
+    } else {
+      this.setState({
+        modelIsOpen: false,
+      });
+    }
+  };
+
+  handleSwitch = () => {
+    if (this.state.switchValue === false) {
+      this.setState({
+        switchValue: true,
+      });
+    } else {
+      this.setState({
+        switchValue: false,
+      });
+    }
   };
 
   componentDidMount() {
@@ -58,7 +95,13 @@ export default class InventoryList extends Component {
   render() {
     return (
       <>
-        <AddInventory></AddInventory>
+        <AddInventory
+          submitNewItem={this.submitNewItem}
+          toggleModal={this.toggleModal}
+          handleSwitch={this.handleSwitch}
+          modelIsOpen={this.state.modelIsOpen}
+          switchValue={this.state.switchValue}
+        />
         <div className="inventoryList">
           <section className="inventoryList__header">
             <h1>Inventory</h1>

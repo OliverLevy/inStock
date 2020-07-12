@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import Modal from "react-modal";
 import { default as ToggleSwitch } from "react-switch";
 import "./Modal.scss";
@@ -7,63 +7,35 @@ import addIcon from "../../../../assets/icons/Icon-add.svg";
 Modal.setAppElement("#root");
 
 class AddInventory extends React.Component {
-  state = {
-    modelIsOpen: false,
-    switchValue: false,
-  };
-
-  toggleModal = () => {
-    if (this.state.modelIsOpen === false) {
-      this.setState({
-        modelIsOpen: true,
-      });
-    } else {
-      this.setState({
-        modelIsOpen: false,
-      });
-    }
-  };
-
-  handleSwitch = () => {
-    if (this.state.switchValue === false) {
-      this.setState({
-        switchValue: true,
-      });
-    } else {
-      this.setState({
-        switchValue: false,
-      });
-    }
-  };
+  
 
   switchDisplayValue = () => {
-    if(this.state.switchValue === true){
-      return(
-        <p>In Stock</p>
-      )
+    if (this.props.switchValue === true) {
+      return <p>In Stock</p>;
     } else {
-      return (
-        <p>Out of Stock</p>
-      )
+      return <p>Out of Stock</p>;
     }
-  }
+  };
 
   render() {
-    
     return (
       <div>
-        <button onClick={this.toggleModal} className="add-item__open">
+        <button onClick={this.props.toggleModal} className="add-item__open">
           <img src={addIcon} alt="add item button" className="add-item__icon" />
         </button>
         <Modal
-          isOpen={this.state.modelIsOpen}
+          isOpen={this.props.modelIsOpen}
           className="add-item__modal"
           overlayClassName="add-item__modal-overlay"
           bodyOpenClassName="add-item__document-body"
           htmlOpenClassName="add-item__document-body"
+          // shouldFocusAfterRender
         >
           <h1>Create New</h1>
-          <form className="add-item__form">
+          <form
+            className="add-item__form"
+            onSubmit={this.props.submitNewItem}
+          >
             <div className="add-item__container">
               <label className="add-item__input-container">
                 <h5 className="add-item__label">PRODUCT</h5>
@@ -71,11 +43,16 @@ class AddInventory extends React.Component {
                   type="text"
                   className="add-item__input"
                   placeholder="Item Name"
+                  name="name"
                 />
               </label>
               <label className="add-item__input-container">
                 <h5 className="add-item__label">LAST ORDERED</h5>
-                <input type="date" className="add-item__input" />
+                <input
+                  type="date"
+                  className="add-item__input"
+                  name="lastOrdered"
+                />
               </label>
 
               <label className="add-item__input-container">
@@ -84,11 +61,12 @@ class AddInventory extends React.Component {
                   type="text"
                   className="add-item__input"
                   placeholder="City"
+                  name="city"
                 />
               </label>
               <label className="add-item__input-container">
                 <h5 className="add-item__label">COUNTRY</h5>
-                <select className="add-item__input">
+                <select className="add-item__input" name="country">
                   <option>Canada</option>
                 </select>
               </label>
@@ -99,6 +77,7 @@ class AddInventory extends React.Component {
                   type="number"
                   className="add-item__input"
                   placeholder="0"
+                  name="quantity"
                 />
               </label>
               <div className="add-item__input-container">
@@ -106,8 +85,8 @@ class AddInventory extends React.Component {
                 <div className="add-item__in-stock-container">
                   {this.switchDisplayValue()}
                   <ToggleSwitch
-                    onChange={this.handleSwitch}
-                    checked={this.state.switchValue}
+                    onChange={this.props.handleSwitch}
+                    checked={this.props.switchValue}
                   />
                 </div>
               </div>
@@ -119,6 +98,7 @@ class AddInventory extends React.Component {
                 type="text"
                 className="add-item__text-area"
                 placeholder="(Optional)"
+                name="description"
               />
             </label>
 
@@ -127,7 +107,7 @@ class AddInventory extends React.Component {
                 <h4>SAVE</h4>
               </button>
               <button
-                onClick={this.toggleModal}
+                onClick={this.props.toggleModal}
                 className="cta-btn cta-btn--cancel"
               >
                 <h4>CANCEL</h4>
