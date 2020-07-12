@@ -13,7 +13,7 @@
 
   @include desktop {
     flex-wrap: nowrap;
-    padding-bottom: 1rem;
+    padding-bottom: 5rem;
     align-items: baseline;
     height:6vh;
 
@@ -39,7 +39,7 @@
       }
     }
     @include desktop {
-      height: 5vh;
+      height: 6vh;
     }
   }
   &__txt {

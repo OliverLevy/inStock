@@ -33,7 +33,9 @@
   @include desktop {
     @include desktop-padding;
   }
-
+& .locationCard{
+  height:7vh;
+}
   &__searchBar {
     padding: 15px 40px;
     border-radius: 5px;
@@ -45,7 +47,7 @@
     background-repeat: no-repeat;
 
     @include tablet{
-      height:5vh;
+      height:6vh;
       width: 38%;
       background-position:15px 17px ;
     }
