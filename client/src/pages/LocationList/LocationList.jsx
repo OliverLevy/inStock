@@ -63,6 +63,37 @@ export default class LocationList extends Component {
       });
   }
 
+  // submit form
+  handleSubmit=(event)=>{
+    event.preventDefault()
+    console.log(event.target.locationName.value)
+    const formData = new FormData(event.target);
+    console.log(formData.get('locationName'), 'is location name')
+    console.log(formData.get('locationAddress'), 'is location address')
+    axios.post("http://localhost:8080/warehouses", {
+      name: formData.get("locationName"),
+      
+      address:{
+          street: formData.get("locationAddress"),
+          location: formData.get("locationCountry")
+      },
+      contact:{
+          name: formData.get("locationContactName"),
+          position: formData.get("locationContactPosition"),
+          phone: formData.get("locationContactPhone"),
+          email: formData.get("locationContactEmail"),
+      },
+      inventoryCategories: formData.get("locationCategories")
+
+    })
+    .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })  }
+
+
   render() {
     return (
       <div className="locationList">
