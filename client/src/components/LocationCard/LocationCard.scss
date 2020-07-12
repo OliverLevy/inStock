@@ -1,12 +1,9 @@
 @import "../../App.scss";
 
 .locationCard {
-  //   @include mobile-padding;
   position: relative;
   border-bottom: 1px solid $inputBorder;
   @include tablet {
-    // @include tablet-padding;
-    
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -15,10 +12,11 @@
   }
 
   @include desktop {
-    //   @include desktop-padding;
     flex-wrap: nowrap;
     padding-bottom: 1rem;
     align-items: baseline;
+    height:6vh;
+
   }
   &__group {
     margin: 1rem 0;
