@@ -8,36 +8,36 @@ export default function LocationDetailCard( {inventory} ) {
 
     return (
         <div>
-             <section className="locationList__card locationCard">
-          <section className="locationCard__group">
-            <h5 className='locationCard__label-vertical'>ITEM</h5>
-            <section className="locationCard__product">
-              <h3 className="locationCard__product-name">{inventory.name}</h3>
-              <p className="locationCard__product-description locationCard__txt"></p>
+             <section className="locationList__card locationDetailCard">
+          <section className="locationDetailCard__group">
+            <h5 className='locationDetailCard__label-vertical'>ITEM</h5>
+            <section className="locationDetailCard__product">
+              <h3 className="locationDetailCard__product-name">{inventory.name}</h3>
+              <p className="locationDetailCard__product-description locationDetailCard__txt"></p>
             </section>
           </section>
 ​
-          <section className="locationCard__group">
-          <h5 className='locationCard__label-vertical'>LAST ORDERED</h5>
-          <p className="locationCard__txt">{inventory.lastOrdered}</p>
+          <section className="locationDetailCard__group">
+          <h5 className='locationDetailCard__label-vertical'>LAST ORDERED</h5>
+          <p className="locationDetailCard__txt">{inventory.lastOrdered}</p>
           </section>
 ​
-          <section className="locationCard__group">
-          <h5 className='locationCard__label-vertical'>LOCATION</h5>
-          <p className="locationCard__txt">{inventory.city}</p>
+          <section className="locationDetailCard__group">
+          <h5 className='locationDetailCard__label-vertical'>LOCATION</h5>
+          <p className="locationDetailCard__txt">{inventory.city}</p>
           </section>
 ​
-          <section className="locationCard__group">
-          <h5 className='locationCard__label-vertical'>QUANTITY</h5>
-          <p className="locationCard__txt">{inventory.quantity}</p>
+          <section className="locationDetailCard__group">
+          <h5 className='locationDetailCard__label-vertical'>QUANTITY</h5>
+          <p className="locationDetailCard__txt">{inventory.quantity}</p>
           </section>
 ​
-          <section className="locationCard__group">
-          <h5 className='locationCard__label-vertical'>STATUS</h5>
-          {inventory.isInstock ? <p className="locationCard__txt" >In Stock</p> : <p className="locationCard__txt" >Out of Stock</p>}
+          <section className="locationDetailCard__group">
+          <h5 className='locationDetailCard__label-vertical'>STATUS</h5>
+          {inventory.isInstock ? <p className="locationDetailCard__txt" >In Stock</p> : <p className="locationDetailCard__txt" >Out of Stock</p>}
           </section>
 ​
-          <section className="locationCard__removeIcon">
+          <section className="locationDetailCard__removeIcon">
             <img src={RemoveLogo}alt="remove button"/>
           </section>
 ​

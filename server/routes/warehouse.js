@@ -31,18 +31,18 @@ router.post("/", (req, res) => {
   const warehouseToAdd = req.body.newWarehouse;
   const output = {
     id: uuid.v4(),
-    name: warehouseToAdd.name,
+    name: warehouseToAdd.locationName,
     address: {
-      street: warehouseToAdd.address.street,
-      location: warehouseToAdd.address.location,
+      street: warehouseToAdd.locationAddress,
+      location: warehouseToAdd.locationCountry
     },
     contact: {
-      name: warehouseToAdd.contact.name,
-      position: warehouseToAdd.contact.position,
-      phone: warehouseToAdd.contact.phone,
-      email: warehouseToAdd.contact.email,
+      name: warehouseToAdd.contact.locationContactName,
+      position: warehouseToAdd.contact.locationContactPosition,
+      phone: warehouseToAdd.contact.locationContactPhone,
+      email: warehouseToAdd.contact.locationContactEmail,
     },
-    inventoryCategories: warehouseToAdd.inventoryCategories,
+    inventoryCategories: warehouseToAdd.locationCategories,
   };
   if (
     !output.name ||
