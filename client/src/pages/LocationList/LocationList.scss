@@ -34,7 +34,9 @@
     @include desktop-padding;
   }
 & .locationCard{
-  height:7vh;
+  @include desktop{
+    height:7vh;
+  }
 }
   &__searchBar {
     padding: 15px 40px;
