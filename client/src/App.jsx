@@ -8,15 +8,11 @@ import NavBar from "./components/NavBar/NavBar";
 import "./App.scss";
 
 class App extends React.Component {
-
   render() {
-    // let x = useParams()
     return (
-      
-      <div>
+      <div> 
         <BrowserRouter>
           <NavBar test={useParams}/>
-
           <Switch>
             <Route path="/warehouses/:id" component={LocationDetail} />
             <Route path="/inventory/:id" component={InventoryDetail} />
@@ -29,5 +25,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;

@@ -1,34 +1,49 @@
-@import "../../App.scss";
+@import "../../../../App.scss";
+@import "../../../../partials/mixins";
 
-.locationCard {
+@mixin mobile-padding {
+    padding: 0 1rem;
+  }
+  
+@mixin tablet-padding {
+    padding: 0 2rem;
+  }
+  
+@mixin desktop-padding {
+    padding: 0 8rem;
+  }
+
+.locationDetailCard {
   position: relative;
   border-bottom: 1px solid $inputBorder;
   @include tablet {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-top: 1rem;
     padding-bottom: 1rem;
   }
 
+  & h5 {
+      margin-right: -51px;
+  }
+
+  &__label-vertical{
+    @include tablet {
+        display : none;
+    }
+}
+
   @include desktop {
     flex-wrap: nowrap;
-    padding-bottom: 5rem;
+    padding-bottom: 1rem;
     align-items: baseline;
-    height:6vh;
-
   }
   &__group {
     margin: 1rem 0;
     @include tablet {
       margin: 0;
       width: 25%;
-      &-warehouse {
-        width: 100%;
-        margin-bottom: 0.5rem;
-        @include desktop {
-          width: 25%;
-        }
       }
       &-description {
         width: 35%;
@@ -39,9 +54,9 @@
       }
     }
     @include desktop {
-      height: 6vh;
-    }
-  }
+      height: 5vh;
+}
+  
   &__txt {
     margin-bottom: 0.2rem;
     @include tablet {
@@ -54,30 +69,8 @@
     @include desktop {
       font-size: 14px;
     }
-
-    &-job {
-      font-style: italic;
-    }
-  }
-
-  &__warehouse-name{
-      font-weight: 600;
-      @include desktop{
-          font-size: 16px;
-      }
-  }
-
-  &__arrowIcon {
-    position: absolute;
-    right: 0rem;
-    top: 0;
-    @include tablet {
-      top: 1rem;
-      right: 0rem;
-    }
-
-    @include desktop{
-        right:1rem;
-    }
   }
 }
+
+
+  

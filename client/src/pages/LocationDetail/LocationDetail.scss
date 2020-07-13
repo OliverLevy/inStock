@@ -1,0 +1,128 @@
+@import '../../App.scss';
+@import '../../partials/mixins';
+
+
+@mixin mobile-padding {
+    padding: 0 1rem;
+  }
+  
+@mixin tablet-padding {
+    padding: 0 2rem;
+  }
+  
+@mixin desktop-padding {
+    padding: 0 8rem;
+  }
+
+.locationDetail {
+  @include mobile-padding;
+  &__header {
+    margin: 2rem 0;
+    @include tablet {
+      margin:2rem 0 1rem 0;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  @include tablet {
+    @include tablet-padding;
+  }
+
+  @include desktop {
+    @include desktop-padding;
+  }
+
+  &__link{
+    display: flex;
+    align-items: center;
+    padding: 0 0 1rem;
+    margin-top: 0.4rem;
+    position: absolute;
+
+    @include tablet{
+      margin-top: 0.7rem;
+    }
+  }
+  &__linkIcon{
+    height: 24px;
+  }
+  &__horizontal {
+    
+        display: none;
+    
+        @include tablet{
+        display:flex;
+        width: 99%;
+      }
+    &>*{
+      width: 20%;
+    }
+    }
+
+      &__subHeader {
+        @include tablet {
+          margin-top:0;
+         width: 75%;
+         justify-content: space-between;
+         align-items: flex-start;
+
+        }
+      @include desktop{
+        width: 70%;
+      }
+      }
+   
+
+  &__searchBar {
+    
+      padding: 15px 40px;
+      border-radius: 5px;
+      width: 80%;
+      background-color: $inputBg;
+      background-position: 10px 15px;
+      border: 1px solid $inputBorder;
+      background-image: url(../../assets/icons/Icon-search.svg);
+      background-repeat: no-repeat;
+  
+
+    @include tablet{
+      height:6vh;
+      width: 38%;
+      background-position:15px 17px ;
+    }
+
+    @include desktop{
+      width: 27%;
+      height:6vh;
+    }
+  }
+
+  
+
+&__address {
+  display: flex;
+  flex-direction: column;
+}  
+
+&__labels{
+  display: none;
+  @include desktop{
+    display:flex;
+    width: 77vw;
+  }
+  & > *{
+    @include desktop{
+      width: 20%;
+    }
+  }
+}
+h1{
+  position: relative;
+  margin-left: 2rem;
+  @include tablet{
+    margin-left: 1.5rem;
+  }
+}
+}
+ 

@@ -1,0 +1,36 @@
+@import '../../App.scss';
+.dropdownMenu{
+    &__button{
+        border:none;
+        background-color:white;
+        background-image:url(../../assets/icons/Icon-kebab-default.svg);
+        background-repeat: no-repeat;
+        background-position:15px 8px;
+        color:white;
+        width: 40px;
+        height:40px;
+    }
+    &__container{
+        position:relative;
+    }
+    &__remove-button{
+        font-family: Avenir, sans-serif;
+        border: 1px solid black;
+        border-radius:2px;
+        border-color: $inputBorder;
+        box-shadow: 0px 10px 50px 10px $inputBorder;
+        background-color:white;
+        color:$primary;
+        width: 145px;
+        height:45px;
+        padding:0 55px 0 0;
+        position:absolute;
+        right:0;
+        @include tablet{
+            height:34px;
+            width: 90px;
+            padding:0 20px 0 0;
+            box-shadow:0px 0px 15px 0px $inputBorder;
+        }
+    }
+}

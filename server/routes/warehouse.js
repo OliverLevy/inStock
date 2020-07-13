@@ -5,49 +5,41 @@ const uuid = require("uuid");
 const fs = require('fs')
 router.use(cors());
 const locations = require("../instock-data/locations.json");
+const inventory = require("../instock-data/inventory.json");
 const { json } = require("express");
+
 
 // get ALL locations
 router.get("/", (req, res) => {
   res.json(locations);
 });
 
-// post a new warehouse to locations and replies with the new warehouse list aka locations
-// example post for front end:
-// =============
-// {
-//   "newWarehouse":{
-//       "name": "Oliver",
-//       "address": {
-//           "street": "123 Fake Street W",
-//           "location": "Toronto, CAN"
-//           },
-//       "contact": {
-//           "name": "Blah Blah",
-//           "position": "Regional Manager",
-//           "phone": "416 679 4324",
-//           "email": "DimoDurian@pundermifflin.com"
-//       },
-//       "inventoryCategories": "dog food, pizza"
-//       }
-// }
-// =============
+router.get("/:id", (req, res) => {
+  let currentWarehouseId = req.params.id
+  let currentWarehouse = locations.filter(item => item.id === currentWarehouseId)
+  let currentWarehouseInventory = inventory.filter(item => item.warehouseId === currentWarehouseId)
+  let output = {currentWarehouse, currentWarehouseInventory}
+
+  if (!currentWarehouse[0]) return res.status(404).json({reply: "Warehouse does not exist"})
+  res.json(output);
+})
+
 router.post("/", (req, res) => {
   const warehouseToAdd = req.body.newWarehouse;
   const output = {
     id: uuid.v4(),
-    name: warehouseToAdd.name,
+    name: warehouseToAdd.locationName,
     address: {
-      street: warehouseToAdd.address.street,
-      location: warehouseToAdd.address.location,
+      street: warehouseToAdd.locationAddress,
+      location: warehouseToAdd.locationCountry
     },
     contact: {
-      name: warehouseToAdd.contact.name,
-      position: warehouseToAdd.contact.position,
-      phone: warehouseToAdd.contact.phone,
-      email: warehouseToAdd.contact.email,
+      name: warehouseToAdd.contact.locationContactName,
+      position: warehouseToAdd.contact.locationContactPosition,
+      phone: warehouseToAdd.contact.locationContactPhone,
+      email: warehouseToAdd.contact.locationContactEmail,
     },
-    inventoryCategories: warehouseToAdd.inventoryCategories,
+    inventoryCategories: warehouseToAdd.locationCategories,
   };
   if (
     !output.name ||
@@ -71,6 +63,6 @@ router.post("/", (req, res) => {
     if (err) return console.error('Error writing file', err)
     else console.log('file written successfully')
   })
-});
+})
 
 module.exports = router;

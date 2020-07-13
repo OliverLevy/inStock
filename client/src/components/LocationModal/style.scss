@@ -1,0 +1,197 @@
+@import "../../App.scss";
+
+.locationModal {
+  // modal style
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #32323292;
+  }
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    @include tablet {
+      top: 8em;
+      left: 5em;
+      right: 5em;
+      bottom: 8em;
+    }
+    @include desktop {
+      top: 8em;
+      left: 20em;
+      right: 20em;
+      bottom: 8em;
+    }
+  }
+
+  &__title {
+    margin: 0.5em 0 1em 0;
+    font-size: 1.5rem;
+    @include tablet{
+        font-size: 2rem;
+        margin:1em 1em;
+        
+    }
+  }
+  &__button {
+    width: 4rem;
+    height: 4rem;
+    background-color: $accent;
+    border: none;
+    border-radius: 50%;
+    background-image: url(../../assets/icons/Icon-add.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 10px 15px 3px #afafaf7e;
+    position: fixed;
+    bottom: 10em;
+    right: 2em;
+    @include tablet {
+      width: 5rem;
+      height: 5rem;
+      right: 5em;
+    }
+    @include desktop{
+      right: 12rem;
+    }
+  }
+
+  &__form {
+      @include tablet{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        padding:0 2em;
+      }
+    &-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1em;
+      @include tablet{
+          width: 46%;
+          margin-bottom: 1.5em;
+          &-warehouseName{
+              width: 100%;
+              & input{
+                  width: 40%;
+              }
+          }
+          &-category{
+              width: 100%;
+          }
+      }
+      select {
+        background: $inputBg;
+        padding: 10px 0 10px 10px;
+        border: 1px solid $inputBorder;
+        font-size: 0.75rem;
+        color: $primary;
+        font-family: Avenir;
+      }
+    }
+    &-label {
+      margin-bottom: 0.3em;
+      font-size: 0.75rem;
+      line-height: 1.25rem;
+      color: #afafaf;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    &-input {
+      outline: none;
+      padding: 10px 0 10px 10px;
+      border-radius: 5px;
+      width: 100%;
+      background-color: $inputBg;
+      border: 1px solid $inputBorder;
+      font-size: 0.75rem;
+      &::placeholder {
+        color: $primary;
+        font-family: Avenir;
+      }
+      @include tablet{
+          padding:15px 0 15px 15px;
+          font-size:0.8rem;
+      }
+    }
+    &-textarea {
+      padding: 10px 0 40px 10px;
+      resize: none;
+      outline: none;
+      background-color: $inputBg;
+      border: 1px solid $inputBorder;
+      border-radius: 5px;
+      font-size: 0.75rem;
+      color: $primary;
+      font-family: Avenir;
+      @include tablet{
+        font-size:0.8rem;
+        padding-left: 15px;
+        padding-top:15px;
+      }
+    }
+  }
+
+  //   BUTTONS
+  &__buttons {
+    display: flex;
+    flex-direction: column-reverse;
+    @include tablet {
+        padding:0 2em;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+  &__cancel {
+    background-color: white;
+    border: none;
+    color: $accent;
+    padding: 15px 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    @include tablet {
+      font-size: 0.875rem;
+      width: 30%;
+      padding: 16px 10px;
+    }
+   
+    &:focus {
+      outline: none;
+      color: white;
+    }
+  
+    &:hover {
+      background-color: $accentHover;
+      color: white;
+    }
+  }
+  
+  &__save {
+    background-color: $accent;
+    color: white;
+    width: 100%;
+    border: none;
+    padding: 15px 10px;
+    border-radius: 5px;
+    font-size: 0.8125rem;
+    @include tablet {
+      font-size: 0.875rem;
+      width: 30%;
+      padding: 16px 10px;
+    }
+  }
+}
